@@ -1,0 +1,2090 @@
+﻿[
+    {
+        "codigo":  "1",
+        "nombre":  "Sensor presión aceite",
+        "descripcion":  "Aplicaciones: Aveo / Optra / Astra / Corsa / Palio",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782928111049
+    },
+    {
+        "codigo":  "2",
+        "nombre":  "Sensor presión aceite",
+        "descripcion":  "Aplicaciones: Aveo / Optra / Astra / Corsa / Palio",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782928182440
+    },
+    {
+        "codigo":  "3",
+        "nombre":  "Sensor presión aceite / compresor A/C universal",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782928220928
+    },
+    {
+        "codigo":  "4",
+        "nombre":  "Sensor oxígeno",
+        "descripcion":  "Aplicaciones: Blazer / Corsa / Lanos / Cielo",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782928256168
+    },
+    {
+        "codigo":  "5",
+        "nombre":  "Sensor presión aceite Toyota",
+        "descripcion":  "Aplicaciones: Corolla / Yaris / Camry / Hilux",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782928296984
+    },
+    {
+        "codigo":  "6",
+        "nombre":  "Sensor temperatura Toyota",
+        "descripcion":  "Aplicaciones: Machito / 4Runner / Corolla / Autana",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782921713791
+    },
+    {
+        "codigo":  "7",
+        "nombre":  "Sensor detonación Toyota",
+        "descripcion":  "Aplicaciones: Yaris / Meru / 4Runner / Camry",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782928320800
+    },
+    {
+        "codigo":  "8",
+        "nombre":  "Compresor A/C Toyota",
+        "descripcion":  "Aplicaciones: Terios / Corolla",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782928333104
+    },
+    {
+        "codigo":  "9",
+        "nombre":  "Presión aceite VW / Ford",
+        "descripcion":  "Aplicaciones: Fiesta / Ka / EcoSport / Explorer / F150",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782928454863
+    },
+    {
+        "codigo":  "10",
+        "nombre":  "Sensor detonación Honda",
+        "descripcion":  "Aplicaciones: Civic / Accord / Prelude / Odyssey",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782928463368
+    },
+    {
+        "codigo":  "11",
+        "nombre":  "Presión aceite / A/C Kia / Hyundai",
+        "descripcion":  "Aplicaciones: Tucson / Getz / Accent",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782928475455
+    },
+    {
+        "codigo":  "12",
+        "nombre":  "Presión aceite Renault",
+        "descripcion":  "Aplicaciones: Clio / Symbol / Logan / Megane / Twingo",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782928486215
+    },
+    {
+        "codigo":  "13",
+        "nombre":  "Universal para vehículos pesados",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782928498799
+    },
+    {
+        "codigo":  "14",
+        "nombre":  "Arranque Toyota / Lexus",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782928508847
+    },
+    {
+        "codigo":  "15",
+        "nombre":  "Bombillo H1",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782928519247
+    },
+    {
+        "codigo":  "16",
+        "nombre":  "Inyectores Nissan",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782928528871
+    },
+    {
+        "codigo":  "17",
+        "nombre":  "Bobina Hyundai Santa Fe / Accent · Kia Rio / Soul / Forte",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782928542783
+    },
+    {
+        "codigo":  "18",
+        "nombre":  "Presión aceite Renault Logan / luz cruce Honda",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782928563719
+    },
+    {
+        "codigo":  "19",
+        "nombre":  "Presión aceite Renault Logan / compresor A/C",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782928573279
+    },
+    {
+        "codigo":  "20",
+        "nombre":  "Inyectores Honda",
+        "descripcion":  "Aplicaciones: Fit / Pilot / Accord / CRV",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782928581975
+    },
+    {
+        "codigo":  "21",
+        "nombre":  "Conector de 2 pines de la válvula Evap Ford Explorer 3.5L",
+        "descripcion":  "Aplicaciones: F350 - F250 - Super Duty 6.2L.",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782928590999
+    },
+    {
+        "codigo":  "22",
+        "nombre":  "Bobina Ford",
+        "descripcion":  "Aplicaciones: Explorer / FX4 / Tritón / F150 / Focus / Fusion",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782928600975
+    },
+    {
+        "codigo":  "23",
+        "nombre":  "Inyectores Ford",
+        "descripcion":  "Aplicaciones: Tritón / F150 / EcoSport / Cherokee",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782928615895
+    },
+    {
+        "codigo":  "24",
+        "nombre":  "Bobina de encendido Ford",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782928852350
+    },
+    {
+        "codigo":  "25",
+        "nombre":  "Módulo gasolina Luv D",
+        "descripcion":  "Aplicaciones: Max / Silverado",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782928865598
+    },
+    {
+        "codigo":  "26",
+        "nombre":  "Sensores temperatura / retroceso / dirección Renault",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782928898926
+    },
+    {
+        "codigo":  "27",
+        "nombre":  "Compresor V5 A/C",
+        "descripcion":  "Aplicaciones: Aveo / Optra / Corsa",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782928911158
+    },
+    {
+        "codigo":  "28",
+        "nombre":  "Inyectores macho (pareja del #029)",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782928924166
+    },
+    {
+        "codigo":  "29",
+        "nombre":  "Multiuso inyectores / bobinas / sensores marcas varias",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782928942318
+    },
+    {
+        "codigo":  "30",
+        "nombre":  "Inyectores Toyota Terios",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782928954670
+    },
+    {
+        "codigo":  "31",
+        "nombre":  "Sensor ABS Toyota",
+        "descripcion":  "Aplicaciones: 4Runner / Hilux / Fortuner",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782928969574
+    },
+    {
+        "codigo":  "32",
+        "nombre":  "Bobina Renault (Clio / Symbol) / compresor A/C Fiat",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782928983710
+    },
+    {
+        "codigo":  "33",
+        "nombre":  "GM válvula EGR / solenoides / canister",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782928998254
+    },
+    {
+        "codigo":  "34",
+        "nombre":  "GM válvula EGR / solenoides / canister",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929012157
+    },
+    {
+        "codigo":  "35",
+        "nombre":  "Universal Delphi sistemas A/C",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929023853
+    },
+    {
+        "codigo":  "36",
+        "nombre":  "Universal bobinas Fiat / luces / sensores",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929034654
+    },
+    {
+        "codigo":  "37",
+        "nombre":  "Universal automotriz",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929047726
+    },
+    {
+        "codigo":  "38",
+        "nombre":  "Sensor detonación Palio / Siena · cigüeñal Aveo LS",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929082566
+    },
+    {
+        "codigo":  "39",
+        "nombre":  "Multiuso Volkswagen",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929099077
+    },
+    {
+        "codigo":  "40",
+        "nombre":  "Multiuso Volkswagen",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929113781
+    },
+    {
+        "codigo":  "41",
+        "nombre":  "Inyectores Toyota / Luv D",
+        "descripcion":  "Aplicaciones: Max / Mitsubishi - Montero / Lancer",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929124485
+    },
+    {
+        "codigo":  "42",
+        "nombre":  "Conector automotriz universal",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929144877
+    },
+    {
+        "codigo":  "43",
+        "nombre":  "Inyectores Hyundai / Kia",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929157213
+    },
+    {
+        "codigo":  "44",
+        "nombre":  "Sensor IAT / temperatura Honda",
+        "descripcion":  "Aplicaciones: Civic / Accord / CRV",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929167789
+    },
+    {
+        "codigo":  "45",
+        "nombre":  "Temperatura / alternador / ABS Chevrolet",
+        "descripcion":  "Aplicaciones: Spark / Aveo / Optra / Silverado",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929180821
+    },
+    {
+        "codigo":  "46",
+        "nombre":  "Sensor leva / temperatura Ford",
+        "descripcion":  "Aplicaciones: Tritón / Fiesta / Ka",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929190310
+    },
+    {
+        "codigo":  "47",
+        "nombre":  "Sensores varios Ford",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929200725
+    },
+    {
+        "codigo":  "48",
+        "nombre":  "Sensor MAF Toyota",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929209653
+    },
+    {
+        "codigo":  "49",
+        "nombre":  "Electroventilador Chevrolet",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929219117
+    },
+    {
+        "codigo":  "50",
+        "nombre":  "Electroventilador Chevrolet",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929233813
+    },
+    {
+        "codigo":  "51",
+        "nombre":  "Electroventilador / resistencias Ford / Fiat",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929244397
+    },
+    {
+        "codigo":  "52",
+        "nombre":  "Inyector Ford FX4 / Explorer · Chevrolet Aveo LT / Blazer",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929253293
+    },
+    {
+        "codigo":  "53",
+        "nombre":  "Inyector Ford (Focus / Fiesta) / Captiva / Mazda (3/5/6/CX)",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929283389
+    },
+    {
+        "codigo":  "54",
+        "nombre":  "Inyector Chevrolet Aveo",
+        "descripcion":  "Aplicaciones: Optra",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929297173
+    },
+    {
+        "codigo":  "55",
+        "nombre":  "Universal",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929315813
+    },
+    {
+        "codigo":  "56",
+        "nombre":  "Universal",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929329284
+    },
+    {
+        "codigo":  "57",
+        "nombre":  "Aplicaciones Nissan / Ford / Mazda",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929344733
+    },
+    {
+        "codigo":  "58",
+        "nombre":  "Válvula VVTI",
+        "descripcion":  "Aplicaciones: Trailblazer / Colorado / Hummer H3",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929353844
+    },
+    {
+        "codigo":  "59",
+        "nombre":  "Luces antiniebla / direccionales Toyota",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929362997
+    },
+    {
+        "codigo":  "60",
+        "nombre":  "Sensor temperatura Toyota",
+        "descripcion":  "Aplicaciones: Corolla / Meru / Prado",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929375540
+    },
+    {
+        "codigo":  "61",
+        "nombre":  "Válvula VVTI / direccionales Toyota",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929385692
+    },
+    {
+        "codigo":  "62",
+        "nombre":  "Multiuso Toyota",
+        "descripcion":  "Aplicaciones: luces / sensores / válvulas",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929398036
+    },
+    {
+        "codigo":  "63",
+        "nombre":  "Velocidad / ABS / sensor oxígeno Aveo",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929410860
+    },
+    {
+        "codigo":  "64",
+        "nombre":  "Temperatura / válvulas Suzuki / Hilux / Terios / Mitsubishi",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929422428
+    },
+    {
+        "codigo":  "65",
+        "nombre":  "Bobina encendido Hyundai",
+        "descripcion":  "Aplicaciones: Getz / Elantra",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929430708
+    },
+    {
+        "codigo":  "66",
+        "nombre":  "Bobina encendido Hyundai",
+        "descripcion":  "Aplicaciones: Getz / Elantra",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929440612
+    },
+    {
+        "codigo":  "67",
+        "nombre":  "Sensor leva Toyota",
+        "descripcion":  "Aplicaciones: Hilux / Terios / Lexus",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929451116
+    },
+    {
+        "codigo":  "68",
+        "nombre":  "Motor soplador Chevrolet",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929461324
+    },
+    {
+        "codigo":  "69",
+        "nombre":  "Sensor oxígeno",
+        "descripcion":  "Aplicaciones: Cavalier / Aveo LS / Optra",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929472260
+    },
+    {
+        "codigo":  "70",
+        "nombre":  "Presión aceite / bobinas encendido Chrysler",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929487732
+    },
+    {
+        "codigo":  "71",
+        "nombre":  "Válvula presostática Chevrolet Spark",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929499244
+    },
+    {
+        "codigo":  "72",
+        "nombre":  "Luces cruce / cocuyo Chevrolet",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929510340
+    },
+    {
+        "codigo":  "73",
+        "nombre":  "Bombillo H11",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929521532
+    },
+    {
+        "codigo":  "74",
+        "nombre":  "Bombillo H7 universal",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929530988
+    },
+    {
+        "codigo":  "75",
+        "nombre":  "Electroventilador",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929544060
+    },
+    {
+        "codigo":  "76",
+        "nombre":  "Electroventilador",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929553356
+    },
+    {
+        "codigo":  "77",
+        "nombre":  "Temperatura / cigüeñal / módulo combustible Ford",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929560940
+    },
+    {
+        "codigo":  "78",
+        "nombre":  "Posición cigüeñal Renault",
+        "descripcion":  "Aplicaciones: Logan / Clio / Symbol",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929570868
+    },
+    {
+        "codigo":  "79",
+        "nombre":  "Electroventilador Chrysler",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929580308
+    },
+    {
+        "codigo":  "80",
+        "nombre":  "Motor soplador A/C Ford",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929590812
+    },
+    {
+        "codigo":  "81",
+        "nombre":  "Multiuso Hyundai / Mitsubishi",
+        "descripcion":  "Aplicaciones: electroventilador / ABS / focos",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929657260
+    },
+    {
+        "codigo":  "82",
+        "nombre":  "Multiuso Hyundai / Mitsubishi",
+        "descripcion":  "Aplicaciones: electroventilador / ABS / focos",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929670692
+    },
+    {
+        "codigo":  "83",
+        "nombre":  "Bobina / TPS / velocidad",
+        "descripcion":  "Aplicaciones: Spark / Aveo / Optra / VW / Fiat",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929685299
+    },
+    {
+        "codigo":  "84",
+        "nombre":  "3 pines macho (pareja del #083)",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929694180
+    },
+    {
+        "codigo":  "85",
+        "nombre":  "Bobina encendido Toyota Terios",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929704548
+    },
+    {
+        "codigo":  "86",
+        "nombre":  "Bobina",
+        "descripcion":  "Aplicaciones: Chana / Saic Wuling / ZNA / Grand Tiger",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929715227
+    },
+    {
+        "codigo":  "87",
+        "nombre":  "Temperatura",
+        "descripcion":  "Aplicaciones: Renault Logan / Clio / Twingo / Palio / Siena",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929725987
+    },
+    {
+        "codigo":  "88",
+        "nombre":  "Válvula temperatura / presión aceite Peugeot / Dongfeng",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929736148
+    },
+    {
+        "codigo":  "89",
+        "nombre":  "Alternador / presión aceite Renault / Dongfeng / Peugeot",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929747179
+    },
+    {
+        "codigo":  "90",
+        "nombre":  "Oxígeno / MAP / combustible Peugeot / Dongfeng / Renault",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929760555
+    },
+    {
+        "codigo":  "91",
+        "nombre":  "Cuerpo aceleración Peugeot 206 / 207 / 307 / 408",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929786475
+    },
+    {
+        "codigo":  "92",
+        "nombre":  "Sensor leva / cigüeñal VW",
+        "descripcion":  "Aplicaciones: Gol / Fox / Spacefox",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929804915
+    },
+    {
+        "codigo":  "93",
+        "nombre":  "Alternador / bobina / sensores Ford / Jeep",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929827779
+    },
+    {
+        "codigo":  "94",
+        "nombre":  "Sensor TPS Ford",
+        "descripcion":  "Aplicaciones: Fiesta / EcoSport / Focus / RAM",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929838155
+    },
+    {
+        "codigo":  "95",
+        "nombre":  "Sensor TPS Toyota",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929851323
+    },
+    {
+        "codigo":  "96",
+        "nombre":  "Velocidad Toyota / válvula temperatura Vitara",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929864075
+    },
+    {
+        "codigo":  "97",
+        "nombre":  "Sensor MAP / MAF / TPS Toyota",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929877027
+    },
+    {
+        "codigo":  "98",
+        "nombre":  "Bobina Chevrolet Luv D",
+        "descripcion":  "Aplicaciones: Max",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929895067
+    },
+    {
+        "codigo":  "99",
+        "nombre":  "Distribuidor Toyota",
+        "descripcion":  "Aplicaciones: Corolla / Autana / Celica",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782929908179
+    },
+    {
+        "codigo":  "100",
+        "nombre":  "Conector GM",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782918639708
+    },
+    {
+        "codigo":  "101",
+        "nombre":  "Bobina Honda",
+        "descripcion":  "Aplicaciones: Civic / CRV",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782918673362
+    },
+    {
+        "codigo":  "102",
+        "nombre":  "Cigüeñal Toyota",
+        "descripcion":  "Aplicaciones: Corolla / Autana / Machito / Burbuja",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782918705687
+    },
+    {
+        "codigo":  "103",
+        "nombre":  "Válvula temperatura Toyota Terios",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782918748807
+    },
+    {
+        "codigo":  "104",
+        "nombre":  "Bobina Hyundai Atos",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782918779181
+    },
+    {
+        "codigo":  "105",
+        "nombre":  "Conector de 3 pines para bobina de encendido Kia picando, Hyundai Atos.",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782918815692
+    },
+    {
+        "codigo":  "106",
+        "nombre":  "Bobina Ford Fiesta Move – Max – Focus – Explorer.",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782918889727
+    },
+    {
+        "codigo":  "107",
+        "nombre":  "TPS / presostatos",
+        "descripcion":  "Aplicaciones: Aveo / Optra / Cielo / Palio / Siena",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782918939991
+    },
+    {
+        "codigo":  "108",
+        "nombre":  "Bobina encendido Nissan / Mazda",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782919026690
+    },
+    {
+        "codigo":  "109",
+        "nombre":  "Bobina",
+        "descripcion":  "Aplicaciones: Swift / Grand Vitara / Jimny / Laser",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782919070090
+    },
+    {
+        "codigo":  "110",
+        "nombre":  "Alternador Toyota ovalado",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782919148821
+    },
+    {
+        "codigo":  "111",
+        "nombre":  "Bobina Fiat",
+        "descripcion":  "Aplicaciones: Siena / Palio 1.3 16V / 1.4 Fire / 1.8",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782919194293
+    },
+    {
+        "codigo":  "112",
+        "nombre":  "Bobina encendido Honda",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782919229665
+    },
+    {
+        "codigo":  "113",
+        "nombre":  "Electroventilador Kia Sportage",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782919287903
+    },
+    {
+        "codigo":  "114",
+        "nombre":  "Electroventilador Kia Sportage",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782919344236
+    },
+    {
+        "codigo":  "115",
+        "nombre":  "Cigüeñal / bobina / leva",
+        "descripcion":  "Aplicaciones: Spark / Optra / Palio",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782919391612
+    },
+    {
+        "codigo":  "116",
+        "nombre":  "Sensor leva / cigüeñal",
+        "descripcion":  "Aplicaciones: Aveo / Optra / Spark",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782919428194
+    },
+    {
+        "codigo":  "117",
+        "nombre":  "Bobina encendido Ford Fiesta Power",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782919519510
+    },
+    {
+        "codigo":  "118",
+        "nombre":  "Sensor cigüeñal Jeep Wagoneer",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782919598668
+    },
+    {
+        "codigo":  "119",
+        "nombre":  "Sensor árbol leva Toyota Camry",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782919671682
+    },
+    {
+        "codigo":  "120",
+        "nombre":  "Sensor cigüeñal / levas Chrysler",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782919724984
+    },
+    {
+        "codigo":  "121",
+        "nombre":  "Bobina encendido Ford Super Duty",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782919765960
+    },
+    {
+        "codigo":  "122",
+        "nombre":  "Bobina encendido Ford Super Duty",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782919816229
+    },
+    {
+        "codigo":  "123",
+        "nombre":  "Bobina encendido Chevrolet Corsa",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782919907459
+    },
+    {
+        "codigo":  "124",
+        "nombre":  "Válvula IAC",
+        "descripcion":  "Aplicaciones: Optra / Corsa / Aveo / Cielo",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782920004191
+    },
+    {
+        "codigo":  "125",
+        "nombre":  "Sensor oxígeno Chevrolet Silverado",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782920038623
+    },
+    {
+        "codigo":  "126",
+        "nombre":  "Módulo combustible",
+        "descripcion":  "Aplicaciones: Mazda / Ford / Toyota / Chevy",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782920080125
+    },
+    {
+        "codigo":  "127",
+        "nombre":  "MAP / MAF Chery (Orinoco / Arauca / Tiggo) / Fiat Fire",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782920124933
+    },
+    {
+        "codigo":  "128",
+        "nombre":  "Presostato A/C Toyota / Chevrolet",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782920167227
+    },
+    {
+        "codigo":  "129",
+        "nombre":  "Sensor oxígeno Chevrolet Silverado",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782920202275
+    },
+    {
+        "codigo":  "130",
+        "nombre":  "Válvula IAC Chevrolet Vitara",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782920241121
+    },
+    {
+        "codigo":  "131",
+        "nombre":  "Sensor oxígeno Chevrolet Spark",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782920281559
+    },
+    {
+        "codigo":  "132",
+        "nombre":  "Sensor oxígeno Chevrolet Spark",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782920329471
+    },
+    {
+        "codigo":  "133",
+        "nombre":  "Combustible Mazda 3 / cuerpo Palio",
+        "descripcion":  "Aplicaciones: Siena / MAF Ford",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782920367589
+    },
+    {
+        "codigo":  "134",
+        "nombre":  "Módulo gasolina",
+        "descripcion":  "Aplicaciones: Aveo / Spark / Optra / Matiz",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782920404787
+    },
+    {
+        "codigo":  "135",
+        "nombre":  "Módulo gasolina",
+        "descripcion":  "Aplicaciones: Aveo / Spark / Optra / Matiz",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782920443292
+    },
+    {
+        "codigo":  "136",
+        "nombre":  "Módulo gasolina",
+        "descripcion":  "Aplicaciones: Aveo / Spark / Optra / Matiz",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782920474601
+    },
+    {
+        "codigo":  "137",
+        "nombre":  "Resistencia soplador Ford / Chevrolet",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782920533448
+    },
+    {
+        "codigo":  "138",
+        "nombre":  "Válvula presostática Ford",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782920576623
+    },
+    {
+        "codigo":  "139",
+        "nombre":  "Fan clutch Ford Explorer",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782920614302
+    },
+    {
+        "codigo":  "140",
+        "nombre":  "Válvula IAC Chevrolet",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782920647646
+    },
+    {
+        "codigo":  "141",
+        "nombre":  "Relé universal",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782920680141
+    },
+    {
+        "codigo":  "142",
+        "nombre":  "Válvula presostática alta presión Ford",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782920716036
+    },
+    {
+        "codigo":  "143",
+        "nombre":  "Módulo combustible Chevrolet Corsa",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782920749443
+    },
+    {
+        "codigo":  "144",
+        "nombre":  "Módulo combustible Toyota",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782920786275
+    },
+    {
+        "codigo":  "145",
+        "nombre":  "Módulo combustible Honda",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782920821897
+    },
+    {
+        "codigo":  "146",
+        "nombre":  "Bobina rayada",
+        "descripcion":  "Aplicaciones: Aveo LS / Corsa / Chery / Peugeot",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782921165114
+    },
+    {
+        "codigo":  "147",
+        "nombre":  "Bomba gasolina",
+        "descripcion":  "Aplicaciones: Fiat / Ford / Chery (Arauca / Orinoco)",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782921207568
+    },
+    {
+        "codigo":  "148",
+        "nombre":  "Alternador Nissan",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782921238129
+    },
+    {
+        "codigo":  "149",
+        "nombre":  "Bobina encendido Renault Twingo",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782921410045
+    },
+    {
+        "codigo":  "150",
+        "nombre":  "Bobina encendido Toyota",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782921419397
+    },
+    {
+        "codigo":  "151",
+        "nombre":  "Aplicaciones varias Chrysler",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782921430164
+    },
+    {
+        "codigo":  "152",
+        "nombre":  "Módulo combustible Renault",
+        "descripcion":  "Aplicaciones: Clio / Megane / Logan",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782921438411
+    },
+    {
+        "codigo":  "153",
+        "nombre":  "Bobina VW",
+        "descripcion":  "Aplicaciones: Golf / Jetta / Passat / Bora / Audi",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782921445587
+    },
+    {
+        "codigo":  "154",
+        "nombre":  "Universal bombas de gasolina",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782921453955
+    },
+    {
+        "codigo":  "155",
+        "nombre":  "conector de luz antiniebla toyota",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782921535994
+    },
+    {
+        "codigo":  "156",
+        "nombre":  "Conector Regulador Del Alternador Chevrolet Century, Chevy Corvette Camaro Firebird, Vitara, Gm Blazer.",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782921566553
+    },
+    {
+        "codigo":  "157",
+        "nombre":  "Conector de 2 pines para sensor Paré Neutro Silverado Avalanche, Tahoe Impala, ventilador Volkswagen, Audi",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782930614201
+    },
+    {
+        "codigo":  "158",
+        "nombre":  "Conector de 10 para sensor Paré Neutro de Chevrolet Optra, Hyundai Tucson, Kia Sportage, Tiburon",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782930042122
+    },
+    {
+        "codigo":  "159",
+        "nombre":  "Conector Pare Neutro Toyota Yaris Camry Hilux 4runner",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782930070618
+    },
+    {
+        "codigo":  "160",
+        "nombre":  "Conector de 10 pines para Sensor Pare Neutro Toyota Corolla, 4runner, Yaris 160",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782930093690
+    },
+    {
+        "codigo":  "161",
+        "nombre":  "Conector de 10 pines para Sensor Pare Neutro Mitsubishi Lancer, Mitsubishi Montero, Hyundai Atos",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782930123290
+    },
+    {
+        "codigo":  "162",
+        "nombre":  "Conector de 12 pines para sensor Paré Neutro de Hyundai Accent, Elantra Getz, Hyundai santa fe FE, Tucson",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782930188890
+    },
+    {
+        "codigo":  "163",
+        "nombre":  "conector de 9 pines para sensor pare neutro de Aveo, 4runner, Corrolla, Camry, Yaris, Paseo, kia carens",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782930223386
+    },
+    {
+        "codigo":  "164",
+        "nombre":  "Conector de 7 para sensor Paré Neutro de Cheyenne, Blazer, Silverado, trailblazer, jimmy",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782930241546
+    },
+    {
+        "codigo":  "166",
+        "nombre":  "Conector de sensor map chery",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1784735762940
+    },
+    {
+        "codigo":  "167",
+        "nombre":  "Conector de presion de aceite ford",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1784735815099
+    },
+    {
+        "codigo":  "168",
+        "nombre":  "Conector de válvula de retroceso Toyota",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786388041792
+    },
+    {
+        "codigo":  "169",
+        "nombre":  "Conector de sensor MAP Fiat Palio, Siena, Arauca chery",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786388234708
+    },
+    {
+        "codigo":  "170",
+        "nombre":  "Aplicaciones varias, sensor de velocidad, sensor de árbol de leva en Toyota, Chevrolet, Hyundai, Mazda",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786388147803
+    },
+    {
+        "codigo":  "171",
+        "nombre":  "Conector de sensor TPS Ford fiesta, antiniebla Hyundai elantra, sensor de oxígeno Hyundai Accent",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786388336521
+    },
+    {
+        "codigo":  "172",
+        "nombre":  "Conector universal de 4 pines",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786388546990
+    },
+    {
+        "codigo":  "173",
+        "nombre":  "Conector de varias aplicaciones, modulo de combustible, sensor MAP, TPS, MAF en Toyota y Hyundai",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786388635089
+    },
+    {
+        "codigo":  "174",
+        "nombre":  "Conector de sensor de cigueñal y Leva para Nissan Sentra, Murano, Tidda, Xtrail",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786388717744
+    },
+    {
+        "codigo":  "175",
+        "nombre":  "Conector de sensor TPS para Jeep",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786388758342
+    },
+    {
+        "codigo":  "176",
+        "nombre":  "Conector de sensor de oxígeno Toyota 4runner, Fortuner, Tundra, Tacoma",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786388819955
+    },
+    {
+        "codigo":  "177",
+        "nombre":  "Conector para resistencia de soplador Chevrolet Silverado",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786388943874
+    },
+    {
+        "codigo":  "178",
+        "nombre":  "Conector para bobina de encendido Chevrolet Cruze",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786389058045
+    },
+    {
+        "codigo":  "179",
+        "nombre":  "Conector para sensor MAF Mitsubishi",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786389110727
+    },
+    {
+        "codigo":  "180",
+        "nombre":  "Conector de modulo de combustible Chevrolet, Silverado, Avalanche, Cheyenne",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786389172760
+    },
+    {
+        "codigo":  "181",
+        "nombre":  "Conector Valvula Temperatura Nissan Sentra Xtrail Frontier",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786389253767
+    },
+    {
+        "codigo":  "182",
+        "nombre":  "Conector Valvula Temperatura Nissan Sentra Xtrail Frontier",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786389307433
+    },
+    {
+        "codigo":  "183",
+        "nombre":  "Conector para válvula IAC Blazer Tbi Cheyenne Silverado Grand Blazer",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786389351962
+    },
+    {
+        "codigo":  "184",
+        "nombre":  "Conector Sensor Iat Chevrolet",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786389415772
+    },
+    {
+        "codigo":  "185",
+        "nombre":  "Conector Cuerpo Aceleracion Ford Explorer Super Duty Triton",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786389479454
+    },
+    {
+        "codigo":  "186",
+        "nombre":  "Conector Sensor Oxigeno Vw Gol Parati Saveiro",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786389526292
+    },
+    {
+        "codigo":  "187",
+        "nombre":  "Conector Sensor Tps Ford Explorer 98-05 Triton Fortaleza",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786389590132
+    },
+    {
+        "codigo":  "188",
+        "nombre":  "Conector Sensor Tps Ford Explorer 98-05 Triton Fortaleza",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786389632681
+    },
+    {
+        "codigo":  "189",
+        "nombre":  "Conector de sensor de oxigeno Toyota",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786389686275
+    },
+    {
+        "codigo":  "190",
+        "nombre":  "Conector Sensor Oxigeno Toyota Fortuner 4runner Tumdran Taco",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786389741103
+    },
+    {
+        "codigo":  "191",
+        "nombre":  "Conector Valvula Presion Aceite Chevrolet Blazer Cavalier",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786389775289
+    },
+    {
+        "codigo":  "192",
+        "nombre":  "Conector de 6 pines de varias aplicaciones",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786389826629
+    },
+    {
+        "codigo":  "193",
+        "nombre":  "Conector para flotante de gasolina Ford",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786389871976
+    },
+    {
+        "codigo":  "194",
+        "nombre":  "Arnes conector para sensor oxígeno ford hembra",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786389939418
+    },
+    {
+        "codigo":  "195",
+        "nombre":  "Conector de aplicaciones varias",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786389973460
+    },
+    {
+        "codigo":  "196",
+        "nombre":  "Conector de vías universal",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786390016854
+    },
+    {
+        "codigo":  "197",
+        "nombre":  "Conector 3 pines de Bobina Chevrolet Aveo Optra Spark Fiat Palio",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786403823515
+    },
+    {
+        "codigo":  "198",
+        "nombre":  "Conector para distribuidor toyota",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786390059588
+    },
+    {
+        "codigo":  "199",
+        "nombre":  "Sensor De Oxigeno Fortuner 4runner Kavak Motor",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786390116515
+    },
+    {
+        "codigo":  "200",
+        "nombre":  "Conector de bobina de encendido para Chevrolet",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786390152443
+    },
+    {
+        "codigo":  "201",
+        "nombre":  "Conector Bobina De Encendido Para Accent Y Brisa",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786390243585
+    },
+    {
+        "codigo":  "202",
+        "nombre":  "Conector para sensor tps fiat palio",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786390299101
+    },
+    {
+        "codigo":  "203",
+        "nombre":  "Conector Sensor Velocidad Corolla Babycamry Hilux Rav4 Yaris",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786390345498
+    },
+    {
+        "codigo":  "204",
+        "nombre":  "Conector Regulador Alternador Toyota Hilux Yaris",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786390387057
+    },
+    {
+        "codigo":  "205",
+        "nombre":  "Conector Plug Eletro Ventilador Gol Parati Saveiro",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786390451659
+    },
+    {
+        "codigo":  "206",
+        "nombre":  "Conector Electroventilador Vw Fox Gol Bora Parati Saveiro",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786390504024
+    },
+    {
+        "codigo":  "207",
+        "nombre":  "conectores de 2 pines para faros antiniebla VW Transporter T4",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786390571339
+    },
+    {
+        "codigo":  "208",
+        "nombre":  "Conector Electroventilador Audi Volkswagen Polo Seat Skoda",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786390658307
+    },
+    {
+        "codigo":  "209",
+        "nombre":  "Conector Redondo Impermeable De 2 Pines Para Faros",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786390716656
+    },
+    {
+        "codigo":  "210",
+        "nombre":  "Conector Sensor Iac Mitsubishi Lancer 6 Pines",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786390752340
+    },
+    {
+        "codigo":  "211",
+        "nombre":  "Conector electro ventilador hyundai getz, kia picanto",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786390803080
+    },
+    {
+        "codigo":  "212",
+        "nombre":  "Conector Cuerpo De Aceleración Fiat Palio Siena Idea",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786390848644
+    },
+    {
+        "codigo":  "213",
+        "nombre":  "Conector Valvula Temperatura Gol Bora Passat 4 Pines",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786390895048
+    },
+    {
+        "codigo":  "214",
+        "nombre":  "Conector para el automático de arranque mitsubishi hitachi",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786390951555
+    },
+    {
+        "codigo":  "215",
+        "nombre":  "Conector Sensor Map Ford Ka/ Fiesta Focus/ Ecosport/ Mazda",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786390988996
+    },
+    {
+        "codigo":  "216",
+        "nombre":  "Conector sensor De Oxígeno Getz, Accent, Elantra, Bosch",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786391030377
+    },
+    {
+        "codigo":  "217",
+        "nombre":  "Conector Inyector Chevrolet Luv Dmax",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786391071440
+    },
+    {
+        "codigo":  "218",
+        "nombre":  "Conector Valvula Sensor Vtec Honda Civic Emotion",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786391116840
+    },
+    {
+        "codigo":  "219",
+        "nombre":  "Conector Ramal Sensor Velocidad Ford Fiesta Ecosport",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786391190128
+    },
+    {
+        "codigo":  "220",
+        "nombre":  "Sensor Oxigeno Escape Chevrolet Trailblazer",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786391599004
+    },
+    {
+        "codigo":  "221",
+        "nombre":  "Conector bomba de gasolina toyota",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786391666670
+    },
+    {
+        "codigo":  "222",
+        "nombre":  "Conector para cuerpo de aceleración Chevrolet Silverado, Tahoe",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786391723653
+    },
+    {
+        "codigo":  "223",
+        "nombre":  "Conector para valvula de temperatura en Ford, Toyota, Daewoo, Mitsubishi",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786391762415
+    },
+    {
+        "codigo":  "224",
+        "nombre":  "Conector para solenoide de caja Honda",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786391902426
+    },
+    {
+        "codigo":  "225",
+        "nombre":  "Conector de 4 vias universal",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786391962672
+    },
+    {
+        "codigo":  "226",
+        "nombre":  "Conector de 4 vias universal",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786403424596
+    },
+    {
+        "codigo":  "227",
+        "nombre":  "Conector de motor Elevavidrio Chevrolet",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786391984611
+    },
+    {
+        "codigo":  "228",
+        "nombre":  "Conector de modulo de gasolina Toyota (Interno)",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786392025089
+    },
+    {
+        "codigo":  "229",
+        "nombre":  "Conector del ramal de modulo combustible Toyota Terios",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786396235454
+    },
+    {
+        "codigo":  "230",
+        "nombre":  "Conector de modulo de combustible Toyota Terios",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786402540931
+    },
+    {
+        "codigo":  "231",
+        "nombre":  "Conector de modulo de combustible (Interno)",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786402609530
+    },
+    {
+        "codigo":  "232",
+        "nombre":  "Conector Ramal De Inyectores Vw Gol Saveiro",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1786402642822
+    },
+    {
+        "codigo":  "R001",
+        "nombre":  "Relé transparente 5 pines, 12V, 80A R001, 10und",
+        "descripcion":  "",
+        "precio":  0,
+        "stock":  null,
+        "activo":  true,
+        "imgVer":  1782275320615
+    }
+]
