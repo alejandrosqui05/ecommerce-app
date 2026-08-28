@@ -9,9 +9,13 @@ import bannerRoutes from "./routes/banner.routes.js";
 
 const app = express();
 
+const allowedOrigins = (process.env.CLIENT_ORIGIN || "http://localhost:5173")
+  .split(",")
+  .map((origin) => origin.trim());
+
 app.use(
   cors({
-    origin: process.env.CLIENT_ORIGIN || "http://localhost:5173",
+    origin: allowedOrigins,
   })
 );
 app.use(express.json());
