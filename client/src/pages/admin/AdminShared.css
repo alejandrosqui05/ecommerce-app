@@ -48,7 +48,7 @@
 }
 
 .admin-error {
-  color: #b91c1c;
+  color: var(--color-primary);
   font-size: 0.85rem;
   margin: 0 0 0.75rem;
 }
@@ -125,7 +125,7 @@
 
 .admin-badge.is-inactive {
   background: #fee2e2;
-  color: #b91c1c;
+  color: var(--color-primary);
 }
 
 .admin-modal__overlay {

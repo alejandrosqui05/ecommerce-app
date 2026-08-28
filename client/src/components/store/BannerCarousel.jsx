@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import api from "../../api/client";
+import { listPublicBanners } from "../../api/db";
 import "./BannerCarousel.css";
 
 const AUTOPLAY_MS = 4500;
@@ -14,7 +14,7 @@ export default function BannerCarousel() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    api.get("/banners").then((res) => setBanners(res.data));
+    listPublicBanners().then(setBanners);
   }, []);
 
   const goTo = useCallback(

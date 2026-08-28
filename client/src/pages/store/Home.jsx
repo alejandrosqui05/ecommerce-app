@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import api from "../../api/client";
+import { listCategories, listPublicProducts } from "../../api/db";
 import Header from "../../components/store/Header";
 import BrandHero from "../../components/store/BrandHero";
 import BannerCarousel from "../../components/store/BannerCarousel";
@@ -17,7 +17,7 @@ export default function Home() {
   const [search, setSearch] = useState("");
 
   useEffect(() => {
-    api.get("/categories").then((res) => setCategories(res.data));
+    listCategories().then(setCategories);
   }, []);
 
   useEffect(() => {
@@ -27,9 +27,8 @@ export default function Home() {
     if (search.trim()) params.search = search.trim();
 
     const timeout = setTimeout(() => {
-      api
-        .get("/products", { params })
-        .then((res) => setProducts(res.data))
+      listPublicProducts(params)
+        .then(setProducts)
         .finally(() => setLoading(false));
     }, 250); // debounce para la búsqueda en tiempo real
 

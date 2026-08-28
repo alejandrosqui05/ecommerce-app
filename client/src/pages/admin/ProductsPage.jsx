@@ -1,10 +1,25 @@
 import { useEffect, useState } from "react";
-import api from "../../api/client";
+import {
+  listAdminProducts,
+  listCategories,
+  createProduct,
+  updateProduct,
+  updateProductPrice,
+  deleteProduct,
+  toggleProductActive,
+  bulkSetProductsActive,
+  subscribeToProductChanges,
+} from "../../api/db";
+import { useAuth } from "../../context/AuthContext";
 import ProductForm from "../../components/admin/ProductForm";
+import PriceEditForm from "../../components/admin/PriceEditForm";
 import { formatPrice } from "../../utils/format";
 import "./AdminShared.css";
 
 export default function ProductsPage() {
+  const { role } = useAuth();
+  const isPriceEditor = role === "price_editor";
+
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -15,15 +30,19 @@ export default function ProductsPage() {
 
   function loadData() {
     setLoading(true);
-    Promise.all([api.get("/products/admin/all"), api.get("/categories")])
-      .then(([productsRes, categoriesRes]) => {
-        setProducts(productsRes.data);
-        setCategories(categoriesRes.data);
+    Promise.all([listAdminProducts(), listCategories()])
+      .then(([productsList, categoriesList]) => {
+        setProducts(productsList);
+        setCategories(categoriesList);
       })
       .finally(() => setLoading(false));
   }
 
   useEffect(loadData, []);
+
+  // Mantiene este panel sincronizado en vivo con el otro admin: si alguien
+  // crea, edita o borra un producto desde otra sesión, la lista se refresca sola.
+  useEffect(() => subscribeToProductChanges(() => loadData()), []);
 
   function openCreate() {
     setEditingProduct(null);
@@ -35,17 +54,17 @@ export default function ProductsPage() {
     setShowForm(true);
   }
 
-  async function handleSubmit(formData) {
+  async function handleSubmit(formValues) {
     setSubmitting(true);
     try {
       if (editingProduct) {
-        await api.put(`/products/${editingProduct.id}`, formData, {
-          headers: { "Content-Type": "multipart/form-data" },
-        });
+        if (isPriceEditor) {
+          await updateProductPrice(editingProduct.id, formValues);
+        } else {
+          await updateProduct(editingProduct.id, formValues, editingProduct.imagePath);
+        }
       } else {
-        await api.post("/products", formData, {
-          headers: { "Content-Type": "multipart/form-data" },
-        });
+        await createProduct(formValues);
       }
       setShowForm(false);
       loadData();
@@ -56,12 +75,12 @@ export default function ProductsPage() {
 
   async function handleDelete(product) {
     if (!confirm(`¿Eliminar "${product.name}"?`)) return;
-    await api.delete(`/products/${product.id}`);
+    await deleteProduct(product.id, product.imagePath);
     loadData();
   }
 
   async function handleToggle(product) {
-    await api.patch(`/products/${product.id}/toggle`);
+    await toggleProductActive(product.id, product.isActive);
     loadData();
   }
 
@@ -71,7 +90,7 @@ export default function ProductsPage() {
 
     setBulkLoading(true);
     try {
-      await api.patch("/products/bulk", { isActive });
+      await bulkSetProductsActive(isActive);
       loadData();
     } finally {
       setBulkLoading(false);
@@ -82,25 +101,27 @@ export default function ProductsPage() {
     <div>
       <div className="admin-toolbar">
         <h1 className="admin-page-title" style={{ margin: 0 }}>
-          Productos
+          {isPriceEditor ? "Precios de productos" : "Productos"}
         </h1>
-        <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
-          <button
-            className="admin-btn-secondary"
-            disabled={bulkLoading || products.length === 0}
-            onClick={() => handleBulkSetActive(true)}
-          >
-            Activar todos
-          </button>
-          <button
-            className="admin-btn-secondary"
-            disabled={bulkLoading || products.length === 0}
-            onClick={() => handleBulkSetActive(false)}
-          >
-            Desactivar todos
-          </button>
-          <button onClick={openCreate}>+ Nuevo producto</button>
-        </div>
+        {!isPriceEditor && (
+          <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
+            <button
+              className="admin-btn-secondary"
+              disabled={bulkLoading || products.length === 0}
+              onClick={() => handleBulkSetActive(true)}
+            >
+              Activar todos
+            </button>
+            <button
+              className="admin-btn-secondary"
+              disabled={bulkLoading || products.length === 0}
+              onClick={() => handleBulkSetActive(false)}
+            >
+              Desactivar todos
+            </button>
+            <button onClick={openCreate}>+ Nuevo producto</button>
+          </div>
+        )}
       </div>
 
       {loading ? (
@@ -143,13 +164,19 @@ export default function ProductsPage() {
                   </span>
                 </td>
                 <td className="admin-table__actions">
-                  <button onClick={() => openEdit(product)}>Editar</button>
-                  <button onClick={() => handleToggle(product)}>
-                    {product.isActive ? "Desactivar" : "Activar"}
-                  </button>
-                  <button className="admin-btn-danger" onClick={() => handleDelete(product)}>
-                    Eliminar
-                  </button>
+                  {isPriceEditor ? (
+                    <button onClick={() => openEdit(product)}>Editar precio</button>
+                  ) : (
+                    <>
+                      <button onClick={() => openEdit(product)}>Editar</button>
+                      <button onClick={() => handleToggle(product)}>
+                        {product.isActive ? "Desactivar" : "Activar"}
+                      </button>
+                      <button className="admin-btn-danger" onClick={() => handleDelete(product)}>
+                        Eliminar
+                      </button>
+                    </>
+                  )}
                 </td>
               </tr>
             ))}
@@ -162,7 +189,16 @@ export default function ProductsPage() {
         </table>
       )}
 
-      {showForm && (
+      {showForm && isPriceEditor && (
+        <PriceEditForm
+          product={editingProduct}
+          submitting={submitting}
+          onCancel={() => setShowForm(false)}
+          onSubmit={handleSubmit}
+        />
+      )}
+
+      {showForm && !isPriceEditor && (
         <ProductForm
           product={editingProduct}
           categories={categories}

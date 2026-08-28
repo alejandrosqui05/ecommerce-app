@@ -40,17 +40,16 @@ export default function BannerForm({ banner, onCancel, onSubmit, submitting }) {
       return;
     }
 
-    const data = new FormData();
-    data.append("title", form.title.trim());
-    data.append("subtitle", form.subtitle.trim());
-    data.append("linkUrl", form.linkUrl.trim());
-    data.append("order", form.order);
-    if (imageFile) data.append("image", imageFile);
-
     try {
-      await onSubmit(data);
+      await onSubmit({
+        title: form.title.trim(),
+        subtitle: form.subtitle.trim(),
+        linkUrl: form.linkUrl.trim(),
+        order: form.order,
+        imageFile,
+      });
     } catch (err) {
-      setError(err.response?.data?.error || "Error al guardar el banner");
+      setError(err.message || "Error al guardar el banner");
     }
   }
 

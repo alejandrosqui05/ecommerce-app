@@ -3,7 +3,7 @@ import { useAuth } from "../../context/AuthContext";
 import "./DashboardLayout.css";
 
 export default function DashboardLayout() {
-  const { admin, logout } = useAuth();
+  const { admin, role, logout } = useAuth();
   const navigate = useNavigate();
 
   function handleLogout() {
@@ -19,12 +19,16 @@ export default function DashboardLayout() {
           <NavLink to="/admin/products" className="admin-sidebar__link">
             Productos
           </NavLink>
-          <NavLink to="/admin/categories" className="admin-sidebar__link">
-            Categorías
-          </NavLink>
-          <NavLink to="/admin/banners" className="admin-sidebar__link">
-            Banners
-          </NavLink>
+          {role !== "price_editor" && (
+            <>
+              <NavLink to="/admin/categories" className="admin-sidebar__link">
+                Categorías
+              </NavLink>
+              <NavLink to="/admin/banners" className="admin-sidebar__link">
+                Banners
+              </NavLink>
+            </>
+          )}
         </nav>
         <div className="admin-sidebar__footer">
           <span>{admin?.email}</span>

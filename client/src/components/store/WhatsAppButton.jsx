@@ -35,11 +35,13 @@ export default function WhatsAppButton() {
       rel="noopener noreferrer"
       className={`whatsapp-fab ${tieneProductos ? "whatsapp-fab--pedido" : "whatsapp-fab--consulta"}`}
     >
-      <WhatsAppIcon />
+      <span className="whatsapp-fab__icon">
+        <WhatsAppIcon />
+      </span>
       <span className="whatsapp-fab__label">
         {tieneProductos
           ? `Enviar pedido (${items.reduce((acc, item) => acc + item.quantity, 0)})`
-          : "¿No está lo que buscas? Te lo solucionamos"}
+          : "Cuéntame qué necesitas? Te lo solucionamos!...."}
       </span>
     </a>
   );

@@ -1,5 +1,11 @@
 import { useEffect, useState } from "react";
-import api from "../../api/client";
+import {
+  listAdminBanners,
+  createBanner,
+  updateBanner,
+  deleteBanner,
+  toggleBannerActive,
+} from "../../api/db";
 import BannerForm from "../../components/admin/BannerForm";
 import "./AdminShared.css";
 
@@ -12,9 +18,8 @@ export default function BannersPage() {
 
   function loadData() {
     setLoading(true);
-    api
-      .get("/banners/admin/all")
-      .then((res) => setBanners(res.data))
+    listAdminBanners()
+      .then(setBanners)
       .finally(() => setLoading(false));
   }
 
@@ -30,17 +35,13 @@ export default function BannersPage() {
     setShowForm(true);
   }
 
-  async function handleSubmit(formData) {
+  async function handleSubmit(formValues) {
     setSubmitting(true);
     try {
       if (editingBanner) {
-        await api.put(`/banners/${editingBanner.id}`, formData, {
-          headers: { "Content-Type": "multipart/form-data" },
-        });
+        await updateBanner(editingBanner.id, formValues, editingBanner.imagePath);
       } else {
-        await api.post("/banners", formData, {
-          headers: { "Content-Type": "multipart/form-data" },
-        });
+        await createBanner(formValues);
       }
       setShowForm(false);
       loadData();
@@ -51,12 +52,12 @@ export default function BannersPage() {
 
   async function handleDelete(banner) {
     if (!confirm(`¿Eliminar el banner "${banner.title || "sin título"}"?`)) return;
-    await api.delete(`/banners/${banner.id}`);
+    await deleteBanner(banner.id, banner.imagePath);
     loadData();
   }
 
   async function handleToggle(banner) {
-    await api.patch(`/banners/${banner.id}/toggle`);
+    await toggleBannerActive(banner.id, banner.isActive);
     loadData();
   }
 

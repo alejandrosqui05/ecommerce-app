@@ -63,7 +63,7 @@
 
 .admin-login__error {
   background: #fee2e2;
-  color: #b91c1c;
+  color: var(--color-primary);
   padding: 0.6rem 0.75rem;
   border-radius: 8px;
   font-size: 0.85rem;

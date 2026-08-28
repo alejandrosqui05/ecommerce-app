@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import api from "../../api/client";
+import { listCategories, createCategory, updateCategory, deleteCategory } from "../../api/db";
 import "./AdminShared.css";
 
 export default function CategoriesPage() {
@@ -11,9 +11,8 @@ export default function CategoriesPage() {
 
   function loadCategories() {
     setLoading(true);
-    api
-      .get("/categories")
-      .then((res) => setCategories(res.data))
+    listCategories()
+      .then(setCategories)
       .finally(() => setLoading(false));
   }
 
@@ -26,15 +25,15 @@ export default function CategoriesPage() {
 
     try {
       if (editingId) {
-        await api.put(`/categories/${editingId}`, { name });
+        await updateCategory(editingId, name);
       } else {
-        await api.post("/categories", { name });
+        await createCategory(name);
       }
       setName("");
       setEditingId(null);
       loadCategories();
     } catch (err) {
-      setError(err.response?.data?.error || "Error al guardar la categoría");
+      setError(err.message || "Error al guardar la categoría");
     }
   }
 
@@ -52,10 +51,10 @@ export default function CategoriesPage() {
   async function handleDelete(category) {
     if (!confirm(`¿Eliminar la categoría "${category.name}"?`)) return;
     try {
-      await api.delete(`/categories/${category.id}`);
+      await deleteCategory(category.id);
       loadCategories();
     } catch (err) {
-      alert(err.response?.data?.error || "Error al eliminar");
+      alert(err.message || "Error al eliminar");
     }
   }
 

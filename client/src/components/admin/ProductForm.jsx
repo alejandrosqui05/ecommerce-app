@@ -44,18 +44,17 @@ export default function ProductForm({ product, categories, onCancel, onSubmit, s
       return;
     }
 
-    const data = new FormData();
-    data.append("name", form.name.trim());
-    data.append("description", form.description.trim());
-    data.append("price", form.price);
-    data.append("categoryId", form.categoryId);
-    data.append("code", isConectores ? form.code.trim() : "");
-    if (imageFile) data.append("image", imageFile);
-
     try {
-      await onSubmit(data);
+      await onSubmit({
+        name: form.name.trim(),
+        description: form.description.trim(),
+        price: form.price,
+        categoryId: form.categoryId,
+        code: isConectores ? form.code.trim() : "",
+        imageFile,
+      });
     } catch (err) {
-      setError(err.response?.data?.error || "Error al guardar el producto");
+      setError(err.message || "Error al guardar el producto");
     }
   }
 

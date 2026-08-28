@@ -19,7 +19,7 @@ export default function Login() {
       await login(email, password);
       navigate("/admin");
     } catch (err) {
-      setError(err.response?.data?.error || "Error al iniciar sesión");
+      setError(err.message || "Error al iniciar sesión");
     } finally {
       setSubmitting(false);
     }

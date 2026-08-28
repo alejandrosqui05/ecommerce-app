@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState, useCallback } from "react";
-import api from "../api/client";
+import { supabase } from "../utils/supabase";
 
 const AuthContext = createContext(null);
 
@@ -8,32 +8,36 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const token = localStorage.getItem("admin_token");
-    if (!token) {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setAdmin(session?.user ?? null);
       setLoading(false);
-      return;
-    }
-    api
-      .get("/auth/me")
-      .then((res) => setAdmin(res.data))
-      .catch(() => localStorage.removeItem("admin_token"))
-      .finally(() => setLoading(false));
+    });
+
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      setAdmin(session?.user ?? null);
+    });
+
+    return () => subscription.unsubscribe();
   }, []);
 
   const login = useCallback(async (email, password) => {
-    const res = await api.post("/auth/login", { email, password });
-    localStorage.setItem("admin_token", res.data.token);
-    setAdmin(res.data.admin);
-    return res.data.admin;
+    const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+    if (error) throw error;
+    setAdmin(data.user);
+    return data.user;
   }, []);
 
-  const logout = useCallback(() => {
-    localStorage.removeItem("admin_token");
+  const logout = useCallback(async () => {
+    await supabase.auth.signOut();
     setAdmin(null);
   }, []);
 
+  const role = admin?.app_metadata?.role === "price_editor" ? "price_editor" : "admin";
+
   return (
-    <AuthContext.Provider value={{ admin, loading, login, logout }}>
+    <AuthContext.Provider value={{ admin, role, loading, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteBase /
+
+# Si el archivo o carpeta pedido existe de verdad (JS, CSS, imágenes), se sirve tal cual
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Cualquier otra ruta (ej. /admin/login) la resuelve React Router en el navegador
+RewriteRule ^ index.html [L]
