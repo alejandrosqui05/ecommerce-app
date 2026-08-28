@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { getCategoryGradient } from "../../utils/categoryColors";
+import { getCategoryImage } from "../../utils/categoryImages";
 import "./CategoryShowcase.css";
 
 const VISIBLE_COUNT = 6;
@@ -24,17 +25,28 @@ export default function CategoryShowcase({ categories, onSelect }) {
       </div>
 
       <div className="category-showcase__grid">
-        {visible.map((cat, i) => (
-          <button
-            key={cat.id}
-            className="category-card"
-            style={{ background: getCategoryGradient(i) }}
-            onClick={() => onSelect(cat.slug)}
-          >
-            <span className="category-card__frame" aria-hidden="true" />
-            <span className="category-card__name">{cat.name}</span>
-          </button>
-        ))}
+        {visible.map((cat, i) => {
+          const image = getCategoryImage(cat.name);
+          return (
+            <button
+              key={cat.id}
+              className="category-card"
+              style={
+                image
+                  ? {
+                      backgroundImage: `linear-gradient(0deg, rgba(10,10,10,0.85), rgba(10,10,10,0.15) 65%), url(${image})`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                    }
+                  : { background: getCategoryGradient(i) }
+              }
+              onClick={() => onSelect(cat.slug)}
+            >
+              <span className="category-card__frame" aria-hidden="true" />
+              <span className="category-card__name">{cat.name}</span>
+            </button>
+          );
+        })}
       </div>
     </section>
   );
