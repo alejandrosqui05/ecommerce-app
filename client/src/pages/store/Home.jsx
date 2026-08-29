@@ -27,7 +27,16 @@ export default function Home() {
 
     const timeout = setTimeout(() => {
       listPublicProducts(params)
-        .then(setProducts)
+        .then((data) => {
+          if (activeSlug === "all") {
+            data = [...data].sort((a, b) => {
+              const aFirst = a.category?.slug === "conectores" ? 0 : 1;
+              const bFirst = b.category?.slug === "conectores" ? 0 : 1;
+              return aFirst - bFirst;
+            });
+          }
+          setProducts(data);
+        })
         .finally(() => setLoading(false));
     }, 250); // debounce para la búsqueda en tiempo real
 
