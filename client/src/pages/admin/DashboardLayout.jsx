@@ -27,6 +27,9 @@ export default function DashboardLayout() {
               <NavLink to="/admin/banners" className="admin-sidebar__link">
                 Banners
               </NavLink>
+              <NavLink to="/admin/settings" className="admin-sidebar__link">
+                Configuración
+              </NavLink>
             </>
           )}
         </nav>

@@ -7,6 +7,7 @@ import SearchBar from "../../components/store/SearchBar";
 import ProductGrid from "../../components/store/ProductGrid";
 import CartDrawer from "../../components/store/CartDrawer";
 import WhatsAppButton from "../../components/store/WhatsAppButton";
+import Footer from "../../components/store/Footer";
 
 export default function Home() {
   const [categories, setCategories] = useState([]);
@@ -67,6 +68,7 @@ export default function Home() {
         <ProductGrid products={products} loading={loading} />
       </div>
 
+      <Footer />
       <CartDrawer />
       <WhatsAppButton />
     </div>

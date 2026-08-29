@@ -287,3 +287,27 @@ export async function toggleBannerActive(id, currentIsActive) {
   if (error) throw error;
   return data;
 }
+
+// ---------- Configuración de la tienda ----------
+
+export async function getStoreSettings() {
+  const { data, error } = await supabase.from("StoreSettings").select("*").eq("id", 1).single();
+  if (error) throw error;
+  return data;
+}
+
+export async function updateStoreSettings({ contactEmail, contactPhone, address }) {
+  const { data, error } = await supabase
+    .from("StoreSettings")
+    .update({
+      contactEmail: contactEmail || null,
+      contactPhone: contactPhone || null,
+      address: address || null,
+      updatedAt: new Date().toISOString(),
+    })
+    .eq("id", 1)
+    .select()
+    .single();
+  if (error) throw error;
+  return data;
+}

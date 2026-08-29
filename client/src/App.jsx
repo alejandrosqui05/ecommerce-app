@@ -9,6 +9,7 @@ import DashboardLayout from "./pages/admin/DashboardLayout";
 import ProductsPage from "./pages/admin/ProductsPage";
 import CategoriesPage from "./pages/admin/CategoriesPage";
 import BannersPage from "./pages/admin/BannersPage";
+import SettingsPage from "./pages/admin/SettingsPage";
 
 export default function App() {
   return (
@@ -31,6 +32,7 @@ export default function App() {
               <Route path="products" element={<ProductsPage />} />
               <Route path="categories" element={<CategoriesPage />} />
               <Route path="banners" element={<BannersPage />} />
+              <Route path="settings" element={<SettingsPage />} />
             </Route>
 
             <Route path="*" element={<Navigate to="/" replace />} />
