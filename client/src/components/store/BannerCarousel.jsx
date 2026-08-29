@@ -61,18 +61,23 @@ export default function BannerCarousel({ categories, onSelect }) {
         {categories.map((cat, i) => {
           const image = getCategoryImage(cat.name);
           return (
-            <button
+            <div
               key={cat.id}
               className="banner-carousel__slide is-clickable"
               style={image ? undefined : { background: getCategoryGradient(i) }}
               onClick={() => onSelect(cat.slug)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") onSelect(cat.slug);
+              }}
+              role="button"
+              tabIndex={0}
             >
               {image && (
                 <img src={image} alt={cat.name} className="banner-carousel__image" loading="lazy" />
               )}
               <span className="banner-carousel__frame" aria-hidden="true" />
               <span className="banner-carousel__name">{cat.name}</span>
-            </button>
+            </div>
           );
         })}
       </div>
