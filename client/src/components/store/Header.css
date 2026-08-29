@@ -15,13 +15,12 @@
 .store-header__row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0.75rem 1rem;
 }
 
-.store-header__menu-btn,
 .store-header__cart-btn {
   display: flex;
   align-items: center;
@@ -34,10 +33,6 @@
   cursor: pointer;
   padding: 0.35rem 0.4rem;
   position: relative;
-}
-
-.store-header__menu-icon {
-  font-size: 1.1rem;
 }
 
 .store-header__cart-badge {
@@ -57,73 +52,3 @@
   padding: 0 4px;
 }
 
-.store-menu__overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 60;
-  display: flex;
-}
-
-.store-menu {
-  width: 100%;
-  max-width: 300px;
-  height: 100%;
-  background: var(--bg-surface);
-  color: var(--text-body);
-  animation: menu-slide-in 0.2s ease;
-  display: flex;
-  flex-direction: column;
-}
-
-@keyframes menu-slide-in {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-
-.store-menu__header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem;
-  border-bottom: 1px solid var(--border-color);
-  font-weight: 700;
-}
-
-.store-menu__header button {
-  background: none;
-  border: none;
-  font-size: 1.1rem;
-  cursor: pointer;
-}
-
-.store-menu__list {
-  list-style: none;
-  margin: 0;
-  padding: 0.5rem 0;
-  overflow-y: auto;
-}
-
-.store-menu__list button {
-  width: 100%;
-  text-align: left;
-  background: none;
-  border: none;
-  padding: 0.75rem 1rem;
-  font-size: 0.92rem;
-  cursor: pointer;
-  color: var(--text-body);
-}
-
-.store-menu__list button:hover {
-  background: var(--bg-hover);
-}
-
-.store-menu__list button.is-active {
-  color: var(--color-primary);
-  font-weight: 700;
-}

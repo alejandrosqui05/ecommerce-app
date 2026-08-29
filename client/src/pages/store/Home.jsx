@@ -56,7 +56,7 @@ export default function Home() {
 
   return (
     <div className="store-page">
-      <Header categories={categories} activeSlug={activeSlug} onSelectCategory={setActiveSlug} />
+      <Header />
       <BrandHero />
       <BannerCarousel categories={categories} onSelect={selectCategory} />
       <SearchBar value={search} onChange={setSearch} />
