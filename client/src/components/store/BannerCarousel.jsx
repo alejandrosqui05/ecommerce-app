@@ -1,38 +1,32 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { listPublicBanners } from "../../api/db";
+import { getCategoryGradient } from "../../utils/categoryColors";
+import { getCategoryImage } from "../../utils/categoryImages";
 import "./BannerCarousel.css";
 
 const AUTOPLAY_MS = 4500;
 
-export default function BannerCarousel() {
-  const [banners, setBanners] = useState([]);
+export default function BannerCarousel({ categories, onSelect }) {
   const [index, setIndex] = useState(0);
   const trackRef = useRef(null);
   const touchStartX = useRef(null);
   const autoplayRef = useRef(null);
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    listPublicBanners().then(setBanners);
-  }, []);
 
   const goTo = useCallback(
     (i) => {
-      if (banners.length === 0) return;
-      const next = (i + banners.length) % banners.length;
+      if (categories.length === 0) return;
+      const next = (i + categories.length) % categories.length;
       setIndex(next);
     },
-    [banners.length]
+    [categories.length]
   );
 
   const resetAutoplay = useCallback(() => {
     clearInterval(autoplayRef.current);
-    if (banners.length <= 1) return;
+    if (categories.length <= 1) return;
     autoplayRef.current = setInterval(() => {
-      setIndex((prev) => (prev + 1) % banners.length);
+      setIndex((prev) => (prev + 1) % categories.length);
     }, AUTOPLAY_MS);
-  }, [banners.length]);
+  }, [categories.length]);
 
   useEffect(() => {
     resetAutoplay();
@@ -53,16 +47,7 @@ export default function BannerCarousel() {
     touchStartX.current = null;
   }
 
-  function handleBannerClick(banner) {
-    if (!banner.linkUrl) return;
-    if (/^https?:\/\//i.test(banner.linkUrl)) {
-      window.open(banner.linkUrl, "_blank", "noopener,noreferrer");
-    } else {
-      navigate(banner.linkUrl);
-    }
-  }
-
-  if (banners.length === 0) return null;
+  if (categories.length === 0) return null;
 
   return (
     <div className="banner-carousel">
@@ -73,34 +58,36 @@ export default function BannerCarousel() {
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
       >
-        {banners.map((banner) => (
-          <div
-            key={banner.id}
-            className={`banner-carousel__slide ${banner.linkUrl ? "is-clickable" : ""}`}
-            onClick={() => handleBannerClick(banner)}
-          >
-            <img src={banner.imageUrl} alt={banner.title || "Promoción"} loading="lazy" />
-            {banner.title && (
-              <div className="banner-carousel__text">
-                <h2>{banner.title}</h2>
-                {banner.subtitle && <p>{banner.subtitle}</p>}
-              </div>
-            )}
-          </div>
-        ))}
+        {categories.map((cat, i) => {
+          const image = getCategoryImage(cat.name);
+          return (
+            <button
+              key={cat.id}
+              className="banner-carousel__slide is-clickable"
+              style={image ? undefined : { background: getCategoryGradient(i) }}
+              onClick={() => onSelect(cat.slug)}
+            >
+              {image && (
+                <img src={image} alt={cat.name} className="banner-carousel__image" loading="lazy" />
+              )}
+              <span className="banner-carousel__frame" aria-hidden="true" />
+              <span className="banner-carousel__name">{cat.name}</span>
+            </button>
+          );
+        })}
       </div>
 
-      {banners.length > 1 && (
+      {categories.length > 1 && (
         <div className="banner-carousel__dots">
-          {banners.map((banner, i) => (
+          {categories.map((cat, i) => (
             <button
-              key={banner.id}
+              key={cat.id}
               className={`banner-carousel__dot ${i === index ? "is-active" : ""}`}
               onClick={() => {
                 goTo(i);
                 resetAutoplay();
               }}
-              aria-label={`Ir al banner ${i + 1}`}
+              aria-label={`Ir a ${cat.name}`}
             />
           ))}
         </div>

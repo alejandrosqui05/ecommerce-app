@@ -41,7 +41,7 @@ export default function WhatsAppButton() {
       <span className="whatsapp-fab__label">
         {tieneProductos
           ? `Enviar pedido (${items.reduce((acc, item) => acc + item.quantity, 0)})`
-          : "Cuéntame qué necesitas? Te lo solucionamos!...."}
+          : "Cuéntanos qué necesitas? Te Solucionamos"}
       </span>
     </a>
   );

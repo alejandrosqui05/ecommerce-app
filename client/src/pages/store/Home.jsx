@@ -3,8 +3,7 @@ import { listCategories, listPublicProducts } from "../../api/db";
 import Header from "../../components/store/Header";
 import BrandHero from "../../components/store/BrandHero";
 import BannerCarousel from "../../components/store/BannerCarousel";
-import CategoryShowcase from "../../components/store/CategoryShowcase";
-import CategoryFilterBar from "../../components/store/CategoryFilterBar";
+import SearchBar from "../../components/store/SearchBar";
 import ProductGrid from "../../components/store/ProductGrid";
 import CartDrawer from "../../components/store/CartDrawer";
 import WhatsAppButton from "../../components/store/WhatsAppButton";
@@ -48,16 +47,11 @@ export default function Home() {
   return (
     <div className="store-page">
       <Header categories={categories} activeSlug={activeSlug} onSelectCategory={setActiveSlug} />
-      <BrandHero search={search} onSearchChange={setSearch} />
-      <BannerCarousel />
-      <CategoryShowcase categories={categories} onSelect={selectCategory} />
+      <BrandHero />
+      <BannerCarousel categories={categories} onSelect={selectCategory} />
+      <SearchBar value={search} onChange={setSearch} />
 
       <div id="catalogo">
-        <CategoryFilterBar
-          categories={categories}
-          activeSlug={activeSlug}
-          onSelect={setActiveSlug}
-        />
         <div className="store-page__section-title">
           <h2>{title}</h2>
         </div>

@@ -1,0 +1,20 @@
+.search-bar {
+  max-width: 480px;
+  margin: 1rem auto 0;
+  padding: 0 1rem;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  font-size: 0.95rem;
+  background: var(--bg-surface);
+  color: var(--text-body);
+}
+
+.search-bar input:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 1px;
+}
