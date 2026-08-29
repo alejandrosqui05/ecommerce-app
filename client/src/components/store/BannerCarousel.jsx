@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { getCategoryGradient } from "../../utils/categoryColors";
-import { getCategoryImage } from "../../utils/categoryImages";
+import { getCategoryImage, getCategoryImagePosition } from "../../utils/categoryImages";
 import "./BannerCarousel.css";
 
 const AUTOPLAY_MS = 4500;
@@ -60,7 +60,14 @@ export default function BannerCarousel({ categories, onSelect }) {
         onClick={() => onSelect(activeCategory.slug)}
         style={activeImage ? undefined : { background: getCategoryGradient(index) }}
       >
-        {activeImage && <img src={activeImage} alt={activeCategory.name} className="banner-carousel__image" />}
+        {activeImage && (
+          <img
+            src={activeImage}
+            alt={activeCategory.name}
+            className="banner-carousel__image"
+            style={{ objectPosition: getCategoryImagePosition(activeCategory.name) }}
+          />
+        )}
         <div className="banner-carousel__overlay" />
         <span className="banner-carousel__frame" aria-hidden="true" />
         <span className="banner-carousel__name">{activeCategory.name}</span>

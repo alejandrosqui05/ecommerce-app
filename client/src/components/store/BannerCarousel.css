@@ -7,7 +7,7 @@
 .banner-carousel__viewport {
   position: relative;
   width: 100%;
-  height: 140px;
+  height: 170px;
   border-radius: 14px;
   overflow: hidden;
   cursor: pointer;
@@ -79,7 +79,7 @@
 
 @media (min-width: 640px) {
   .banner-carousel__viewport {
-    height: 190px;
+    height: 230px;
   }
 
   .banner-carousel__name {
@@ -89,6 +89,6 @@
 
 @media (min-width: 1024px) {
   .banner-carousel__viewport {
-    height: 230px;
+    height: 280px;
   }
 }
