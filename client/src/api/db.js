@@ -1,6 +1,6 @@
 import { supabase } from "../utils/supabase";
 import { slugify } from "../utils/slugify";
-import { uploadProductImage, uploadBannerImage, deleteImage } from "../utils/imageUpload";
+import { uploadProductImage, deleteImage } from "../utils/imageUpload";
 
 const PRODUCT_SELECT = "*, category:Category(*)";
 
@@ -204,88 +204,6 @@ export async function deleteCategory(id) {
 
   const { error } = await supabase.from("Category").delete().eq("id", id);
   if (error) throw error;
-}
-
-// ---------- Banners ----------
-
-export async function listPublicBanners() {
-  const { data, error } = await supabase
-    .from("Banner")
-    .select("*")
-    .eq("isActive", true)
-    .order("order", { ascending: true })
-    .order("createdAt", { ascending: false });
-  if (error) throw error;
-  return data;
-}
-
-export async function listAdminBanners() {
-  const { data, error } = await supabase
-    .from("Banner")
-    .select("*")
-    .order("order", { ascending: true })
-    .order("createdAt", { ascending: false });
-  if (error) throw error;
-  return data;
-}
-
-export async function createBanner({ title, subtitle, linkUrl, order, imageFile }) {
-  if (!imageFile) throw new Error("La imagen del banner es requerida");
-  const uploaded = await uploadBannerImage(imageFile);
-
-  const { data, error } = await supabase
-    .from("Banner")
-    .insert({
-      title: title || null,
-      subtitle: subtitle || null,
-      linkUrl: linkUrl || null,
-      order: order ? Number(order) : 0,
-      imageUrl: uploaded.url,
-      imagePath: uploaded.path,
-      updatedAt: new Date().toISOString(),
-    })
-    .select()
-    .single();
-
-  if (error) throw error;
-  return data;
-}
-
-export async function updateBanner(id, { title, subtitle, linkUrl, order, isActive, imageFile }, previousImagePath) {
-  const patch = { updatedAt: new Date().toISOString() };
-  if (title !== undefined) patch.title = title || null;
-  if (subtitle !== undefined) patch.subtitle = subtitle || null;
-  if (linkUrl !== undefined) patch.linkUrl = linkUrl || null;
-  if (order !== undefined) patch.order = Number(order);
-  if (isActive !== undefined) patch.isActive = isActive;
-
-  if (imageFile) {
-    const uploaded = await uploadBannerImage(imageFile);
-    patch.imageUrl = uploaded.url;
-    patch.imagePath = uploaded.path;
-    deleteImage(previousImagePath).catch(() => {});
-  }
-
-  const { data, error } = await supabase.from("Banner").update(patch).eq("id", id).select().single();
-  if (error) throw error;
-  return data;
-}
-
-export async function deleteBanner(id, imagePath) {
-  const { error } = await supabase.from("Banner").delete().eq("id", id);
-  if (error) throw error;
-  deleteImage(imagePath).catch(() => {});
-}
-
-export async function toggleBannerActive(id, currentIsActive) {
-  const { data, error } = await supabase
-    .from("Banner")
-    .update({ isActive: !currentIsActive, updatedAt: new Date().toISOString() })
-    .eq("id", id)
-    .select()
-    .single();
-  if (error) throw error;
-  return data;
 }
 
 // ---------- Configuración de la tienda ----------

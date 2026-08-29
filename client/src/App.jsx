@@ -8,7 +8,6 @@ import Login from "./pages/admin/Login";
 import DashboardLayout from "./pages/admin/DashboardLayout";
 import ProductsPage from "./pages/admin/ProductsPage";
 import CategoriesPage from "./pages/admin/CategoriesPage";
-import BannersPage from "./pages/admin/BannersPage";
 import SettingsPage from "./pages/admin/SettingsPage";
 
 export default function App() {
@@ -31,7 +30,6 @@ export default function App() {
               <Route index element={<Navigate to="products" replace />} />
               <Route path="products" element={<ProductsPage />} />
               <Route path="categories" element={<CategoriesPage />} />
-              <Route path="banners" element={<BannersPage />} />
               <Route path="settings" element={<SettingsPage />} />
             </Route>
 

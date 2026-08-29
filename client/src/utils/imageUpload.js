@@ -37,25 +37,6 @@ async function resizeContain(file, maxWidth, maxHeight) {
   return canvasToWebpBlob(canvas);
 }
 
-// Redimensiona y recorta al tamaño exacto, centrado (como sharp fit: "cover").
-async function resizeCover(file, width, height) {
-  const img = await loadImage(file);
-  const scale = Math.max(width / img.width, height / img.height);
-  const scaledWidth = img.width * scale;
-  const scaledHeight = img.height * scale;
-  const offsetX = (scaledWidth - width) / 2;
-  const offsetY = (scaledHeight - height) / 2;
-
-  const canvas = document.createElement("canvas");
-  canvas.width = width;
-  canvas.height = height;
-  canvas
-    .getContext("2d")
-    .drawImage(img, -offsetX, -offsetY, scaledWidth, scaledHeight);
-
-  return canvasToWebpBlob(canvas);
-}
-
 async function uploadWebpBlob(blob, folder) {
   const path = `${folder}/${crypto.randomUUID()}.webp`;
 
@@ -76,11 +57,6 @@ async function uploadWebpBlob(blob, folder) {
 export async function uploadProductImage(file) {
   const blob = await resizeContain(file, 800, 800);
   return uploadWebpBlob(blob, "products");
-}
-
-export async function uploadBannerImage(file) {
-  const blob = await resizeCover(file, 1920, 600);
-  return uploadWebpBlob(blob, "banners");
 }
 
 export async function deleteImage(path) {
