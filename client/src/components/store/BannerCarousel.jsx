@@ -7,7 +7,6 @@ const AUTOPLAY_MS = 4500;
 
 export default function BannerCarousel({ categories, onSelect }) {
   const [index, setIndex] = useState(0);
-  const trackRef = useRef(null);
   const touchStartX = useRef(null);
   const autoplayRef = useRef(null);
 
@@ -49,37 +48,22 @@ export default function BannerCarousel({ categories, onSelect }) {
 
   if (categories.length === 0) return null;
 
+  const activeCategory = categories[index];
+  const activeImage = getCategoryImage(activeCategory.name);
+
   return (
     <div className="banner-carousel">
       <div
-        className="banner-carousel__track"
-        ref={trackRef}
-        style={{ transform: `translateX(-${index * 100}%)` }}
+        className="banner-carousel__viewport"
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
+        onClick={() => onSelect(activeCategory.slug)}
+        style={activeImage ? undefined : { background: getCategoryGradient(index) }}
       >
-        {categories.map((cat, i) => {
-          const image = getCategoryImage(cat.name);
-          return (
-            <div
-              key={cat.id}
-              className="banner-carousel__slide is-clickable"
-              style={image ? undefined : { background: getCategoryGradient(i) }}
-              onClick={() => onSelect(cat.slug)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") onSelect(cat.slug);
-              }}
-              role="button"
-              tabIndex={0}
-            >
-              {image && (
-                <img src={image} alt={cat.name} className="banner-carousel__image" loading="lazy" />
-              )}
-              <span className="banner-carousel__frame" aria-hidden="true" />
-              <span className="banner-carousel__name">{cat.name}</span>
-            </div>
-          );
-        })}
+        {activeImage && <img src={activeImage} alt={activeCategory.name} className="banner-carousel__image" />}
+        <div className="banner-carousel__overlay" />
+        <span className="banner-carousel__frame" aria-hidden="true" />
+        <span className="banner-carousel__name">{activeCategory.name}</span>
       </div>
 
       {categories.length > 1 && (
