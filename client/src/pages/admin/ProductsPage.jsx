@@ -27,6 +27,14 @@ export default function ProductsPage() {
   const [editingProduct, setEditingProduct] = useState(null);
   const [submitting, setSubmitting] = useState(false);
   const [bulkLoading, setBulkLoading] = useState(false);
+  const [categoryFilter, setCategoryFilter] = useState("all");
+  const [search, setSearch] = useState("");
+
+  const visibleProducts = products.filter((p) => {
+    if (categoryFilter !== "all" && p.category?.id !== categoryFilter) return false;
+    if (search.trim() && !p.name.toLowerCase().includes(search.trim().toLowerCase())) return false;
+    return true;
+  });
 
   function loadData() {
     setLoading(true);
@@ -124,6 +132,23 @@ export default function ProductsPage() {
         )}
       </div>
 
+      <div className="admin-inline-form">
+        <select value={categoryFilter} onChange={(e) => setCategoryFilter(e.target.value)}>
+          <option value="all">Todas las categorías</option>
+          {categories.map((cat) => (
+            <option key={cat.id} value={cat.id}>
+              {cat.name}
+            </option>
+          ))}
+        </select>
+        <input
+          type="text"
+          placeholder="Buscar por nombre..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+      </div>
+
       {loading ? (
         <p>Cargando...</p>
       ) : (
@@ -140,7 +165,7 @@ export default function ProductsPage() {
             </tr>
           </thead>
           <tbody>
-            {products.map((product) => (
+            {visibleProducts.map((product) => (
               <tr key={product.id}>
                 <td>
                   <img
@@ -185,9 +210,11 @@ export default function ProductsPage() {
                 </td>
               </tr>
             ))}
-            {products.length === 0 && (
+            {visibleProducts.length === 0 && (
               <tr>
-                <td colSpan={7}>No hay productos todavía.</td>
+                <td colSpan={7}>
+                  {products.length === 0 ? "No hay productos todavía." : "Ningún producto coincide con el filtro."}
+                </td>
               </tr>
             )}
           </tbody>
