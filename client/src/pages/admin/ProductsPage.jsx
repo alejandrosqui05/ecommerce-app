@@ -165,7 +165,12 @@ export default function ProductsPage() {
                 </td>
                 <td className="admin-table__actions">
                   {isPriceEditor ? (
-                    <button onClick={() => openEdit(product)}>Editar precio</button>
+                    <>
+                      <button onClick={() => openEdit(product)}>Editar precio</button>
+                      <button onClick={() => handleToggle(product)}>
+                        {product.isActive ? "Desactivar" : "Activar"}
+                      </button>
+                    </>
                   ) : (
                     <>
                       <button onClick={() => openEdit(product)}>Editar</button>
