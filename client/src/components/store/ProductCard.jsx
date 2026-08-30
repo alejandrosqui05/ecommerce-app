@@ -5,9 +5,10 @@ import "./ProductCard.css";
 const PLACEHOLDER = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Crect width='400' height='400' fill='%23e5e7eb'/%3E%3C/svg%3E";
 
 export default function ProductCard({ product, index = 0 }) {
-  const { addItem } = useCart();
+  const { items, addItem, updateQuantity } = useCart();
   const pulseDelay = `${(index % 10) * 90}ms`;
   const hasDiscount = Number(product.originalPrice) > Number(product.price);
+  const quantity = items.find((i) => i.id === product.id)?.quantity || 0;
 
   return (
     <div className="product-card">
@@ -34,9 +35,28 @@ export default function ProductCard({ product, index = 0 }) {
             {formatPrice(product.price)}
           </p>
         </div>
-        <button className="product-card__add-btn" onClick={() => addItem(product)}>
-          Añadir al carrito
-        </button>
+        {quantity > 0 ? (
+          <div className="product-card__stepper">
+            <button onClick={() => updateQuantity(product.id, quantity - 1)} aria-label="Quitar uno">
+              −
+            </button>
+            <span>{quantity}</span>
+            <button onClick={() => updateQuantity(product.id, quantity + 1)} aria-label="Agregar uno">
+              +
+            </button>
+            <button
+              className="product-card__stepper-10"
+              onClick={() => updateQuantity(product.id, quantity + 10)}
+              aria-label="Agregar 10"
+            >
+              +10
+            </button>
+          </div>
+        ) : (
+          <button className="product-card__add-btn" onClick={() => addItem(product)}>
+            Añadir al carrito
+          </button>
+        )}
       </div>
     </div>
   );

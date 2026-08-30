@@ -116,6 +116,49 @@
   }
 }
 
+.product-card__stepper {
+  margin-top: 0.3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: var(--color-primary);
+  border-radius: 8px;
+  padding: 0.35rem 0.5rem;
+}
+
+.product-card__stepper span {
+  flex: 1;
+  text-align: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.product-card__stepper button {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.product-card__stepper button:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.product-card__stepper button.product-card__stepper-10 {
+  width: auto;
+  padding: 0 0.4rem;
+  font-size: 0.68rem;
+}
+
 .product-card__add-btn {
   margin-top: 0.3rem;
   padding: 0.5rem;
