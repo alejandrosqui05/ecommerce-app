@@ -87,19 +87,7 @@ export default function ProductForm({ product, categories, onCancel, onSubmit, s
         </label>
 
         <label className="admin-form-field">
-          Precio
-          <input
-            type="number"
-            step="0.01"
-            min="0"
-            value={form.price}
-            onChange={(e) => setForm({ ...form, price: e.target.value })}
-            required
-          />
-        </label>
-
-        <label className="admin-form-field">
-          Precio original (antes del descuento) — opcional
+          Precio original — opcional
           <input
             type="number"
             step="0.01"
@@ -107,6 +95,18 @@ export default function ProductForm({ product, categories, onCancel, onSubmit, s
             value={form.originalPrice}
             onChange={(e) => setForm({ ...form, originalPrice: e.target.value })}
             placeholder="Déjalo vacío si no hay descuento"
+          />
+        </label>
+
+        <label className="admin-form-field">
+          Precio de descuento
+          <input
+            type="number"
+            step="0.01"
+            min="0"
+            value={form.price}
+            onChange={(e) => setForm({ ...form, price: e.target.value })}
+            required
           />
         </label>
 

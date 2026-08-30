@@ -27,20 +27,7 @@ export default function PriceEditForm({ product, onCancel, onSubmit, submitting 
         {error && <p className="admin-error">{error}</p>}
 
         <label className="admin-form-field">
-          Precio
-          <input
-            type="number"
-            step="0.01"
-            min="0"
-            value={price}
-            onChange={(e) => setPrice(e.target.value)}
-            required
-            autoFocus
-          />
-        </label>
-
-        <label className="admin-form-field">
-          Precio original (antes del descuento) — opcional
+          Precio original — opcional
           <input
             type="number"
             step="0.01"
@@ -48,10 +35,23 @@ export default function PriceEditForm({ product, onCancel, onSubmit, submitting 
             value={originalPrice}
             onChange={(e) => setOriginalPrice(e.target.value)}
             placeholder="Déjalo vacío si no hay descuento"
+            autoFocus
+          />
+        </label>
+
+        <label className="admin-form-field">
+          Precio de descuento
+          <input
+            type="number"
+            step="0.01"
+            min="0"
+            value={price}
+            onChange={(e) => setPrice(e.target.value)}
+            required
           />
         </label>
         <p style={{ margin: "-0.5rem 0 0.5rem", fontSize: "0.8rem", color: "var(--text-muted)" }}>
-          Si pones un precio original mayor al precio de arriba, el producto se muestra en oferta
+          Si el precio original es mayor al precio de descuento, el producto se muestra en oferta
           (precio en rojo y destacado) en la tienda.
         </p>
 
