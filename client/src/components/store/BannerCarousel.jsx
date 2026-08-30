@@ -68,9 +68,6 @@ export default function BannerCarousel({ categories, onSelect }) {
             style={{ objectPosition: getCategoryImagePosition(activeCategory.name) }}
           />
         )}
-        <div className="banner-carousel__overlay" />
-        <span className="banner-carousel__frame" aria-hidden="true" />
-        <span className="banner-carousel__name">{activeCategory.name}</span>
       </div>
 
       {categories.length > 1 && (

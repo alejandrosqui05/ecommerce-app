@@ -24,36 +24,6 @@
   object-fit: cover;
 }
 
-.banner-carousel__overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.1) 55%, transparent 100%);
-}
-
-.banner-carousel__frame {
-  position: absolute;
-  top: 0.75rem;
-  left: 0.75rem;
-  width: 26px;
-  height: 26px;
-  border-top: 2px solid rgba(255, 255, 255, 0.55);
-  border-left: 2px solid rgba(255, 255, 255, 0.55);
-}
-
-.banner-carousel__name {
-  position: absolute;
-  left: 1rem;
-  bottom: 0.85rem;
-  color: #fff;
-  font-weight: 800;
-  font-size: 1.05rem;
-  line-height: 1.2;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-}
-
 .banner-carousel__dots {
   display: flex;
   justify-content: center;
@@ -80,10 +50,6 @@
 @media (min-width: 640px) {
   .banner-carousel__viewport {
     height: 230px;
-  }
-
-  .banner-carousel__name {
-    font-size: 1.3rem;
   }
 }
 

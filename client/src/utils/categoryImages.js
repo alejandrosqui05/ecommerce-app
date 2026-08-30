@@ -4,10 +4,10 @@ import sistemaDeInyeccion from "../assets/categories/sistema-de-inyeccion.jpg";
 import suspension from "../assets/categories/suspension.jpg";
 
 const IMAGE_RULES = [
-  { keywords: ["conector"], image: conectores, position: "50% 28%" },
-  { keywords: ["motor"], image: partesDeMotor, position: "50% 42%" },
-  { keywords: ["inyec"], image: sistemaDeInyeccion, position: "50% 32%" },
-  { keywords: ["suspension", "delantero"], image: suspension, position: "50% 42%" },
+  { keywords: ["conector"], image: conectores, position: "50% 50%" },
+  { keywords: ["motor"], image: partesDeMotor, position: "50% 50%" },
+  { keywords: ["inyec"], image: sistemaDeInyeccion, position: "50% 50%" },
+  { keywords: ["suspension", "delantero"], image: suspension, position: "50% 50%" },
 ];
 
 function normalize(text) {
