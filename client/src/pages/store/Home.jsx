@@ -89,7 +89,7 @@ export default function Home() {
     observer.observe(sentinel);
     return () => observer.disconnect();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [page, hasMore, loadingMore, activeSlug, search]);
+  }, [page, hasMore, loadingMore, activeSlug, search, loading]);
 
   const title = useMemo(() => {
     if (activeSlug === "all") return "Todos los productos";
