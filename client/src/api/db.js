@@ -12,7 +12,7 @@ function mapProduct(row) {
 
 // ---------- Productos ----------
 
-export async function listPublicProducts({ category, search } = {}) {
+export async function listPublicProducts({ category, search, page = 0, pageSize = 30 } = {}) {
   let query = supabase
     .from("Product")
     .select(category && category !== "all" ? "*, category:Category!inner(*)" : PRODUCT_SELECT)
@@ -25,7 +25,10 @@ export async function listPublicProducts({ category, search } = {}) {
     query = query.ilike("name", `%${search}%`);
   }
 
-  query = query.order("sortOrder", { ascending: true }).order("createdAt", { ascending: false });
+  query = query
+    .order("sortOrder", { ascending: true })
+    .order("createdAt", { ascending: false })
+    .range(page * pageSize, page * pageSize + pageSize - 1);
 
   const { data, error } = await query;
   if (error) throw error;
