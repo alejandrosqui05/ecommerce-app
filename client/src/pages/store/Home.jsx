@@ -64,6 +64,11 @@ export default function Home() {
       <div id="catalogo">
         <div className="store-page__section-title">
           <h2>{title}</h2>
+          {activeSlug !== "all" && (
+            <button className="store-page__reset-btn" onClick={() => setActiveSlug("all")}>
+              Ver todos los productos
+            </button>
+          )}
         </div>
         <ProductGrid products={products} loading={loading} />
       </div>
