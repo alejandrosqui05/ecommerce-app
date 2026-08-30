@@ -6,6 +6,7 @@ import BannerCarousel from "../../components/store/BannerCarousel";
 import SearchBar from "../../components/store/SearchBar";
 import ProductGrid from "../../components/store/ProductGrid";
 import CartDrawer from "../../components/store/CartDrawer";
+import CartToast from "../../components/store/CartToast";
 import WhatsAppButton from "../../components/store/WhatsAppButton";
 import Footer from "../../components/store/Footer";
 
@@ -126,6 +127,7 @@ export default function Home() {
       </div>
 
       <Footer />
+      <CartToast />
       <CartDrawer />
       <WhatsAppButton />
     </div>

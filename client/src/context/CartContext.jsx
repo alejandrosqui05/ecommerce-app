@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useMemo, useState, useCallback } from "react";
+import { createContext, useContext, useEffect, useMemo, useState, useCallback, useRef } from "react";
 
 const CartContext = createContext(null);
 const STORAGE_KEY = "cart_items";
@@ -13,6 +13,8 @@ export function CartProvider({ children }) {
     }
   });
   const [isOpen, setIsOpen] = useState(false);
+  const [toastMessage, setToastMessage] = useState(null);
+  const toastTimeoutRef = useRef(null);
 
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
@@ -37,7 +39,10 @@ export function CartProvider({ children }) {
         },
       ];
     });
-    setIsOpen(true);
+
+    clearTimeout(toastTimeoutRef.current);
+    setToastMessage(`${product.name} agregado al carrito`);
+    toastTimeoutRef.current = setTimeout(() => setToastMessage(null), 2000);
   }, []);
 
   const removeItem = useCallback((id) => {
@@ -72,6 +77,7 @@ export function CartProvider({ children }) {
         totalPrice,
         isOpen,
         setIsOpen,
+        toastMessage,
       }}
     >
       {children}
