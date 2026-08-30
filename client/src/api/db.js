@@ -46,7 +46,7 @@ export async function listAdminProducts() {
   return data.map(mapProduct);
 }
 
-export async function createProduct({ name, description, price, categoryId, code, sortOrder, imageFile }) {
+export async function createProduct({ name, description, price, originalPrice, categoryId, code, sortOrder, imageFile }) {
   let imageUrl = null;
   let imagePath = null;
   if (imageFile) {
@@ -61,6 +61,7 @@ export async function createProduct({ name, description, price, categoryId, code
       name,
       description: description || null,
       price,
+      originalPrice: originalPrice === "" || originalPrice == null ? null : originalPrice,
       categoryId,
       code: code ? code.trim() : null,
       sortOrder: sortOrder !== undefined && sortOrder !== "" ? Number(sortOrder) : 0,
@@ -75,11 +76,12 @@ export async function createProduct({ name, description, price, categoryId, code
   return mapProduct(data);
 }
 
-export async function updateProduct(id, { name, description, price, categoryId, isActive, code, sortOrder, imageFile }, previousImagePath) {
+export async function updateProduct(id, { name, description, price, originalPrice, categoryId, isActive, code, sortOrder, imageFile }, previousImagePath) {
   const patch = { updatedAt: new Date().toISOString() };
   if (name !== undefined) patch.name = name;
   if (description !== undefined) patch.description = description || null;
   if (price !== undefined) patch.price = price;
+  if (originalPrice !== undefined) patch.originalPrice = originalPrice === "" || originalPrice == null ? null : originalPrice;
   if (categoryId !== undefined) patch.categoryId = categoryId;
   if (isActive !== undefined) patch.isActive = isActive;
   if (code !== undefined) patch.code = code ? code.trim() : null;
@@ -109,13 +111,17 @@ export async function deleteProduct(id, imagePath) {
   deleteImage(imagePath).catch(() => {});
 }
 
-// Usada por la cuenta restringida de "editor de precios": la base de datos
-// (trigger) rechaza cualquier columna distinta a price/isActive aunque se
-// mande algo más desde aquí, así que esta función solo expone esas dos.
-export async function updateProductPrice(id, { price, isActive }) {
+// Usada por la cuenta restringida de "editor de precios": solo expone
+// price/isActive/originalPrice (el descuento se considera parte del precio).
+export async function updateProductPrice(id, { price, isActive, originalPrice }) {
   const { data, error } = await supabase
     .from("Product")
-    .update({ price, isActive, updatedAt: new Date().toISOString() })
+    .update({
+      price,
+      isActive,
+      originalPrice: originalPrice === "" || originalPrice == null ? null : originalPrice,
+      updatedAt: new Date().toISOString(),
+    })
     .eq("id", id)
     .select(PRODUCT_SELECT)
     .single();

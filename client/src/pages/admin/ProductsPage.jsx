@@ -180,7 +180,17 @@ export default function ProductsPage() {
                 <td>{product.code || "—"}</td>
                 <td>{product.name}</td>
                 <td>{product.category?.name}</td>
-                <td>{formatPrice(product.price)}</td>
+                <td>
+                  {formatPrice(product.price)}
+                  {Number(product.originalPrice) > Number(product.price) && (
+                    <>
+                      {" "}
+                      <span style={{ textDecoration: "line-through", color: "var(--text-muted)", fontSize: "0.8em" }}>
+                        {formatPrice(product.originalPrice)}
+                      </span>
+                    </>
+                  )}
+                </td>
                 <td>
                   <span
                     className={`admin-badge ${product.isActive ? "is-active" : "is-inactive"}`}

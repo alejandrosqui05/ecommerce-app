@@ -2,6 +2,7 @@ import { useState } from "react";
 
 export default function PriceEditForm({ product, onCancel, onSubmit, submitting }) {
   const [price, setPrice] = useState(product.price);
+  const [originalPrice, setOriginalPrice] = useState(product.originalPrice ?? "");
   const [isActive, setIsActive] = useState(product.isActive);
   const [error, setError] = useState("");
 
@@ -9,7 +10,7 @@ export default function PriceEditForm({ product, onCancel, onSubmit, submitting 
     e.preventDefault();
     setError("");
     try {
-      await onSubmit({ price, isActive });
+      await onSubmit({ price, originalPrice, isActive });
     } catch (err) {
       setError(err.message || "Error al guardar el precio");
     }
@@ -37,6 +38,22 @@ export default function PriceEditForm({ product, onCancel, onSubmit, submitting 
             autoFocus
           />
         </label>
+
+        <label className="admin-form-field">
+          Precio original (antes del descuento) — opcional
+          <input
+            type="number"
+            step="0.01"
+            min="0"
+            value={originalPrice}
+            onChange={(e) => setOriginalPrice(e.target.value)}
+            placeholder="Déjalo vacío si no hay descuento"
+          />
+        </label>
+        <p style={{ margin: "-0.5rem 0 0.5rem", fontSize: "0.8rem", color: "var(--text-muted)" }}>
+          Si pones un precio original mayor al precio de arriba, el producto se muestra en oferta
+          (precio en rojo y destacado) en la tienda.
+        </p>
 
         <label className="admin-form-field" style={{ flexDirection: "row", alignItems: "center", gap: "0.5rem" }}>
           <input

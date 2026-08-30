@@ -69,13 +69,29 @@
   min-height: 2.3em;
 }
 
+.product-card__price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+.product-card__price-original {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  text-decoration: line-through;
+}
+
 .product-card__price {
   font-size: 1rem;
   font-weight: 700;
-  color: var(--color-primary);
+  color: var(--text-body);
   margin: 0;
   display: inline-block;
   width: fit-content;
+}
+
+.product-card__price.is-discounted {
+  color: var(--color-primary);
   animation: price-pulse 2.2s ease-in-out infinite;
 }
 
@@ -95,7 +111,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .product-card__price {
+  .product-card__price.is-discounted {
     animation: none;
   }
 }

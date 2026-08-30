@@ -7,6 +7,7 @@ const PLACEHOLDER = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg
 export default function ProductCard({ product, index = 0 }) {
   const { addItem } = useCart();
   const pulseDelay = `${(index % 10) * 90}ms`;
+  const hasDiscount = Number(product.originalPrice) > Number(product.price);
 
   return (
     <div className="product-card">
@@ -22,9 +23,17 @@ export default function ProductCard({ product, index = 0 }) {
       </div>
       <div className="product-card__body">
         <h3 className="product-card__title">{product.name}</h3>
-        <p className="product-card__price" style={{ animationDelay: pulseDelay }}>
-          {formatPrice(product.price)}
-        </p>
+        <div className="product-card__price-row">
+          {hasDiscount && (
+            <span className="product-card__price-original">{formatPrice(product.originalPrice)}</span>
+          )}
+          <p
+            className={`product-card__price ${hasDiscount ? "is-discounted" : ""}`}
+            style={hasDiscount ? { animationDelay: pulseDelay } : undefined}
+          >
+            {formatPrice(product.price)}
+          </p>
+        </div>
         <button className="product-card__add-btn" onClick={() => addItem(product)}>
           Añadir al carrito
         </button>

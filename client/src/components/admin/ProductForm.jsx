@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const emptyForm = { name: "", description: "", price: "", categoryId: "", code: "" };
+const emptyForm = { name: "", description: "", price: "", originalPrice: "", categoryId: "", code: "" };
 
 export default function ProductForm({ product, categories, onCancel, onSubmit, submitting }) {
   const [form, setForm] = useState(emptyForm);
@@ -14,6 +14,7 @@ export default function ProductForm({ product, categories, onCancel, onSubmit, s
         name: product.name,
         description: product.description || "",
         price: product.price,
+        originalPrice: product.originalPrice ?? "",
         categoryId: product.categoryId,
         code: product.code || "",
       });
@@ -49,6 +50,7 @@ export default function ProductForm({ product, categories, onCancel, onSubmit, s
         name: form.name.trim(),
         description: form.description.trim(),
         price: form.price,
+        originalPrice: form.originalPrice,
         categoryId: form.categoryId,
         code: isConectores ? form.code.trim() : "",
         imageFile,
@@ -93,6 +95,18 @@ export default function ProductForm({ product, categories, onCancel, onSubmit, s
             value={form.price}
             onChange={(e) => setForm({ ...form, price: e.target.value })}
             required
+          />
+        </label>
+
+        <label className="admin-form-field">
+          Precio original (antes del descuento) — opcional
+          <input
+            type="number"
+            step="0.01"
+            min="0"
+            value={form.originalPrice}
+            onChange={(e) => setForm({ ...form, originalPrice: e.target.value })}
+            placeholder="Déjalo vacío si no hay descuento"
           />
         </label>
 
