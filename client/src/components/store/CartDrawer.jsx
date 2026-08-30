@@ -39,12 +39,26 @@ export default function CartDrawer() {
                     <p className="cart-drawer__item-name">{item.name}</p>
                     <p className="cart-drawer__item-price">{formatPrice(item.price)}</p>
                     <div className="cart-drawer__qty">
+                      <button
+                        className="cart-drawer__qty-step"
+                        onClick={() => updateQuantity(item.id, item.quantity - 10)}
+                        aria-label="Quitar 10"
+                      >
+                        −10
+                      </button>
                       <button onClick={() => updateQuantity(item.id, item.quantity - 1)}>
                         −
                       </button>
                       <span>{item.quantity}</span>
                       <button onClick={() => updateQuantity(item.id, item.quantity + 1)}>
                         +
+                      </button>
+                      <button
+                        className="cart-drawer__qty-step"
+                        onClick={() => updateQuantity(item.id, item.quantity + 10)}
+                        aria-label="Agregar 10"
+                      >
+                        +10
                       </button>
                     </div>
                   </div>
