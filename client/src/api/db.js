@@ -28,6 +28,7 @@ export async function listPublicProducts({ category, search, page = 0, pageSize 
   query = query
     .order("sortOrder", { ascending: true })
     .order("createdAt", { ascending: false })
+    .order("id", { ascending: true })
     .range(page * pageSize, page * pageSize + pageSize - 1);
 
   const { data, error } = await query;
