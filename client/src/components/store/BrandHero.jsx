@@ -1,4 +1,5 @@
 import logo from "../../assets/logo.jpg";
+import SocialLinks from "./SocialLinks";
 import "./BrandHero.css";
 
 const TAGLINE =
@@ -9,6 +10,7 @@ export default function BrandHero() {
     <div className="brand-hero">
       <img src={logo} alt="Inversiones Wildar C.A." className="brand-hero__logo" />
       <p className="brand-hero__tagline">{TAGLINE}</p>
+      <SocialLinks />
     </div>
   );
 }

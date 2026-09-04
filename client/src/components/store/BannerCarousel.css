@@ -22,6 +22,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  z-index: 0;
 }
 
 .banner-carousel__dots {
@@ -46,4 +47,3 @@
   width: 20px;
   transition: width 0.25s ease;
 }
-

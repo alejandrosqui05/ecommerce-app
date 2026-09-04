@@ -224,13 +224,23 @@ export async function getStoreSettings() {
   return data;
 }
 
-export async function updateStoreSettings({ contactEmail, contactPhone, address }) {
+export async function updateStoreSettings({
+  contactEmail,
+  contactPhone,
+  address,
+  instagramUrl,
+  facebookUrl,
+  tiktokUrl,
+}) {
   const { data, error } = await supabase
     .from("StoreSettings")
     .update({
       contactEmail: contactEmail || null,
       contactPhone: contactPhone || null,
       address: address || null,
+      instagramUrl: instagramUrl || null,
+      facebookUrl: facebookUrl || null,
+      tiktokUrl: tiktokUrl || null,
       updatedAt: new Date().toISOString(),
     })
     .eq("id", 1)

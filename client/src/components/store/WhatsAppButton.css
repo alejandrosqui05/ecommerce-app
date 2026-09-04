@@ -2,6 +2,7 @@
   position: fixed;
   bottom: 1.25rem;
   left: 50%;
+  right: auto;
   transform: translateX(-50%);
   height: 52px;
   max-width: calc(100vw - 2rem);

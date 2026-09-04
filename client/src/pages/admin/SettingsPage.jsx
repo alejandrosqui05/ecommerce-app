@@ -2,10 +2,15 @@ import { useEffect, useState } from "react";
 import { getStoreSettings, updateStoreSettings } from "../../api/db";
 import "./AdminShared.css";
 
+const FIELD_STYLE = { display: "flex", flexDirection: "column", gap: "0.3rem" };
+
 export default function SettingsPage() {
   const [contactEmail, setContactEmail] = useState("");
   const [contactPhone, setContactPhone] = useState("");
   const [address, setAddress] = useState("");
+  const [instagramUrl, setInstagramUrl] = useState("");
+  const [facebookUrl, setFacebookUrl] = useState("");
+  const [tiktokUrl, setTiktokUrl] = useState("");
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
@@ -17,6 +22,9 @@ export default function SettingsPage() {
         setContactEmail(settings.contactEmail || "");
         setContactPhone(settings.contactPhone || "");
         setAddress(settings.address || "");
+        setInstagramUrl(settings.instagramUrl || "");
+        setFacebookUrl(settings.facebookUrl || "");
+        setTiktokUrl(settings.tiktokUrl || "");
       })
       .finally(() => setLoading(false));
   }, []);
@@ -27,7 +35,14 @@ export default function SettingsPage() {
     setSaved(false);
     setSaving(true);
     try {
-      await updateStoreSettings({ contactEmail, contactPhone, address });
+      await updateStoreSettings({
+        contactEmail,
+        contactPhone,
+        address,
+        instagramUrl,
+        facebookUrl,
+        tiktokUrl,
+      });
       setSaved(true);
     } catch (err) {
       setError(err.message || "Error al guardar la configuración");
@@ -41,10 +56,10 @@ export default function SettingsPage() {
   return (
     <div>
       <h1 className="admin-page-title">Configuración</h1>
-      <p>Esta información se muestra al final de la página principal de la tienda.</p>
+      <p>Esta información se muestra en la página principal de la tienda.</p>
 
       <form className="admin-inline-form" onSubmit={handleSubmit} style={{ flexDirection: "column", alignItems: "stretch", maxWidth: 420 }}>
-        <label style={{ display: "flex", flexDirection: "column", gap: "0.3rem" }}>
+        <label style={FIELD_STYLE}>
           Correo de contacto
           <input
             type="email"
@@ -53,7 +68,7 @@ export default function SettingsPage() {
             onChange={(e) => setContactEmail(e.target.value)}
           />
         </label>
-        <label style={{ display: "flex", flexDirection: "column", gap: "0.3rem" }}>
+        <label style={FIELD_STYLE}>
           Teléfono
           <input
             type="text"
@@ -62,7 +77,7 @@ export default function SettingsPage() {
             onChange={(e) => setContactPhone(e.target.value)}
           />
         </label>
-        <label style={{ display: "flex", flexDirection: "column", gap: "0.3rem" }}>
+        <label style={FIELD_STYLE}>
           Ubicación
           <input
             type="text"
@@ -71,6 +86,42 @@ export default function SettingsPage() {
             onChange={(e) => setAddress(e.target.value)}
           />
         </label>
+
+        <hr style={{ width: "100%", border: "none", borderTop: "1px solid var(--border-color)", margin: "0.5rem 0" }} />
+        <p style={{ margin: 0, fontWeight: 600 }}>Redes sociales</p>
+        <p style={{ margin: "-0.4rem 0 0", fontSize: "0.8rem", color: "var(--text-muted)" }}>
+          Deja vacío el que no tengas todavía — su ícono no se muestra en la tienda hasta que
+          pongas el link.
+        </p>
+
+        <label style={FIELD_STYLE}>
+          Instagram
+          <input
+            type="url"
+            placeholder="https://instagram.com/tu_usuario"
+            value={instagramUrl}
+            onChange={(e) => setInstagramUrl(e.target.value)}
+          />
+        </label>
+        <label style={FIELD_STYLE}>
+          Facebook
+          <input
+            type="url"
+            placeholder="https://facebook.com/tu_pagina"
+            value={facebookUrl}
+            onChange={(e) => setFacebookUrl(e.target.value)}
+          />
+        </label>
+        <label style={FIELD_STYLE}>
+          TikTok
+          <input
+            type="url"
+            placeholder="https://tiktok.com/@tu_usuario"
+            value={tiktokUrl}
+            onChange={(e) => setTiktokUrl(e.target.value)}
+          />
+        </label>
+
         <button type="submit" disabled={saving}>
           {saving ? "Guardando..." : "Guardar"}
         </button>
