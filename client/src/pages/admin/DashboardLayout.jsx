@@ -20,15 +20,13 @@ export default function DashboardLayout() {
             Productos
           </NavLink>
           {role !== "price_editor" && (
-            <>
-              <NavLink to="/admin/categories" className="admin-sidebar__link">
-                Categorías
-              </NavLink>
-              <NavLink to="/admin/settings" className="admin-sidebar__link">
-                Configuración
-              </NavLink>
-            </>
+            <NavLink to="/admin/categories" className="admin-sidebar__link">
+              Categorías
+            </NavLink>
           )}
+          <NavLink to="/admin/settings" className="admin-sidebar__link">
+            Configuración
+          </NavLink>
         </nav>
         <div className="admin-sidebar__footer">
           <span>{admin?.email}</span>
