@@ -30,9 +30,9 @@ export default function Footer() {
           </a>
         )}
         {settings.address && (
-          <span className="store-footer__item">
+          <span className="store-footer__item store-footer__item--address">
             <PinIcon />
-            <span>{settings.address}</span>
+            <span className="store-footer__address-text">{settings.address}</span>
           </span>
         )}
       </div>

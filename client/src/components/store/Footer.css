@@ -35,6 +35,16 @@ a.store-footer__item:hover {
   text-decoration: underline;
 }
 
+.store-footer__item--address {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.store-footer__address-text {
+  white-space: pre-line;
+  line-height: 1.4;
+}
+
 @media (min-width: 640px) {
   .store-footer__inner {
     flex-direction: row;

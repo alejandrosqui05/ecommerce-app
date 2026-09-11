@@ -78,10 +78,10 @@ export default function SettingsPage() {
           />
         </label>
         <label style={FIELD_STYLE}>
-          Ubicación
-          <input
-            type="text"
-            placeholder="Ciudad, país"
+          Ubicación (puedes usar 2 líneas)
+          <textarea
+            rows={2}
+            placeholder={"Ciudad, sector\nReferencia adicional"}
             value={address}
             onChange={(e) => setAddress(e.target.value)}
           />
