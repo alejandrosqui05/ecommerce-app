@@ -1,5 +1,6 @@
 import { useCart } from "../../context/CartContext";
 import { formatPrice } from "../../utils/format";
+import { getEffectivePrice, getDiscountReferencePrice } from "../../utils/pricing";
 import "./ProductCard.css";
 
 const PLACEHOLDER = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Crect width='400' height='400' fill='%23e5e7eb'/%3E%3C/svg%3E";
@@ -7,7 +8,9 @@ const PLACEHOLDER = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg
 export default function ProductCard({ product, index = 0 }) {
   const { items, addItem, updateQuantity } = useCart();
   const pulseDelay = `${(index % 10) * 90}ms`;
-  const hasDiscount = Number(product.originalPrice) > Number(product.price);
+  const effectivePrice = getEffectivePrice(product);
+  const discountReference = getDiscountReferencePrice(product);
+  const hasDiscount = discountReference !== null;
   const quantity = items.find((i) => i.id === product.id)?.quantity || 0;
 
   return (
@@ -28,13 +31,13 @@ export default function ProductCard({ product, index = 0 }) {
         {product.description && <p className="product-card__description">{product.description}</p>}
         <div className="product-card__price-row">
           {hasDiscount && (
-            <span className="product-card__price-original">{formatPrice(product.originalPrice)}</span>
+            <span className="product-card__price-original">{formatPrice(discountReference)}</span>
           )}
           <p
             className={`product-card__price ${hasDiscount ? "is-discounted" : ""}`}
             style={hasDiscount ? { animationDelay: pulseDelay } : undefined}
           >
-            {formatPrice(product.price)}
+            {formatPrice(effectivePrice)}
           </p>
         </div>
         {product.isOutOfStock ? (
@@ -59,7 +62,7 @@ export default function ProductCard({ product, index = 0 }) {
             </button>
           </div>
         ) : (
-          <button className="product-card__add-btn" onClick={() => addItem(product)}>
+          <button className="product-card__add-btn" onClick={() => addItem({ ...product, price: effectivePrice })}>
             Añadir al carrito
           </button>
         )}

@@ -15,6 +15,7 @@ import { useAuth } from "../../context/AuthContext";
 import ProductForm from "../../components/admin/ProductForm";
 import PriceEditForm from "../../components/admin/PriceEditForm";
 import { formatPrice } from "../../utils/format";
+import { getEffectivePrice, getDiscountReferencePrice } from "../../utils/pricing";
 import "./AdminShared.css";
 
 export default function ProductsPage() {
@@ -187,12 +188,12 @@ export default function ProductsPage() {
                 <td>{product.name}</td>
                 <td>{product.category?.name}</td>
                 <td>
-                  {formatPrice(product.price)}
-                  {Number(product.originalPrice) > Number(product.price) && (
+                  {formatPrice(getEffectivePrice(product))}
+                  {getDiscountReferencePrice(product) !== null && (
                     <>
                       {" "}
                       <span style={{ textDecoration: "line-through", color: "var(--text-muted)", fontSize: "0.8em" }}>
-                        {formatPrice(product.originalPrice)}
+                        {formatPrice(getDiscountReferencePrice(product))}
                       </span>
                     </>
                   )}
