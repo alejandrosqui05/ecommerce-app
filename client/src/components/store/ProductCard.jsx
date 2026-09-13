@@ -25,6 +25,7 @@ export default function ProductCard({ product, index = 0 }) {
       </div>
       <div className="product-card__body">
         <h3 className="product-card__title">{product.name}</h3>
+        {product.description && <p className="product-card__description">{product.description}</p>}
         <div className="product-card__price-row">
           {hasDiscount && (
             <span className="product-card__price-original">{formatPrice(product.originalPrice)}</span>
