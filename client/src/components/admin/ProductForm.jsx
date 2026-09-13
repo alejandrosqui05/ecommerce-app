@@ -41,8 +41,8 @@ export default function ProductForm({ product, categories, onCancel, onSubmit, s
     e.preventDefault();
     setError("");
 
-    if (!form.name.trim() || !form.price || !form.categoryId) {
-      setError("Nombre, precio y categoría son requeridos");
+    if (!form.name.trim() || !form.categoryId) {
+      setError("Nombre y categoría son requeridos");
       return;
     }
 
@@ -50,7 +50,7 @@ export default function ProductForm({ product, categories, onCancel, onSubmit, s
       await onSubmit({
         name: form.name.trim(),
         description: form.description.trim(),
-        price: form.price,
+        price: form.price === "" ? 0 : form.price,
         originalPrice: form.originalPrice,
         categoryId: form.categoryId,
         code: isConectores ? form.code.trim() : "",
@@ -101,14 +101,14 @@ export default function ProductForm({ product, categories, onCancel, onSubmit, s
         </label>
 
         <label className="admin-form-field">
-          Precio de descuento
+          Precio de descuento — opcional
           <input
             type="number"
             step="0.01"
             min="0"
             value={form.price}
             onChange={(e) => setForm({ ...form, price: e.target.value })}
-            required
+            placeholder="Déjalo vacío si aún no tienes el precio"
           />
         </label>
 
