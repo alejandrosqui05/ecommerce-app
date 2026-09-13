@@ -11,9 +11,10 @@ export default function ProductCard({ product, index = 0 }) {
   const quantity = items.find((i) => i.id === product.id)?.quantity || 0;
 
   return (
-    <div className="product-card">
+    <div className={`product-card ${product.isOutOfStock ? "is-out-of-stock" : ""}`}>
       <div className="product-card__image-wrap">
         {product.code && <span className="product-card__code">Cód. {product.code}</span>}
+        {product.isOutOfStock && <span className="product-card__stock-badge">Agotado</span>}
         <img
           src={product.imageUrl || PLACEHOLDER}
           alt={product.name}
@@ -35,7 +36,11 @@ export default function ProductCard({ product, index = 0 }) {
             {formatPrice(product.price)}
           </p>
         </div>
-        {quantity > 0 ? (
+        {product.isOutOfStock ? (
+          <button className="product-card__add-btn" disabled>
+            Agotado
+          </button>
+        ) : quantity > 0 ? (
           <div className="product-card__stepper">
             <button onClick={() => updateQuantity(product.id, quantity - 1)} aria-label="Quitar uno">
               −

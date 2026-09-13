@@ -4,13 +4,14 @@ export default function PriceEditForm({ product, onCancel, onSubmit, submitting 
   const [price, setPrice] = useState(product.price);
   const [originalPrice, setOriginalPrice] = useState(product.originalPrice ?? "");
   const [isActive, setIsActive] = useState(product.isActive);
+  const [isOutOfStock, setIsOutOfStock] = useState(product.isOutOfStock || false);
   const [error, setError] = useState("");
 
   async function handleSubmit(e) {
     e.preventDefault();
     setError("");
     try {
-      await onSubmit({ price, originalPrice, isActive });
+      await onSubmit({ price, originalPrice, isActive, isOutOfStock });
     } catch (err) {
       setError(err.message || "Error al guardar el precio");
     }
@@ -62,6 +63,15 @@ export default function PriceEditForm({ product, onCancel, onSubmit, submitting 
             onChange={(e) => setIsActive(e.target.checked)}
           />
           Activo (visible en la tienda)
+        </label>
+
+        <label className="admin-form-field" style={{ flexDirection: "row", alignItems: "center", gap: "0.5rem" }}>
+          <input
+            type="checkbox"
+            checked={isOutOfStock}
+            onChange={(e) => setIsOutOfStock(e.target.checked)}
+          />
+          Agotado (se muestra en la tienda pero no se puede agregar al carrito)
         </label>
 
         <div className="admin-form-actions">

@@ -7,6 +7,7 @@ import {
   updateProductPrice,
   deleteProduct,
   toggleProductActive,
+  toggleProductOutOfStock,
   bulkSetProductsActive,
   subscribeToProductChanges,
 } from "../../api/db";
@@ -89,6 +90,11 @@ export default function ProductsPage() {
 
   async function handleToggle(product) {
     await toggleProductActive(product.id, product.isActive);
+    loadData();
+  }
+
+  async function handleToggleStock(product) {
+    await toggleProductOutOfStock(product.id, product.isOutOfStock);
     loadData();
   }
 
@@ -197,6 +203,12 @@ export default function ProductsPage() {
                   >
                     {product.isActive ? "Activo" : "Inactivo"}
                   </span>
+                  {product.isOutOfStock && (
+                    <>
+                      {" "}
+                      <span className="admin-badge is-inactive">Agotado</span>
+                    </>
+                  )}
                 </td>
                 <td className="admin-table__actions">
                   {isPriceEditor ? (
@@ -205,12 +217,18 @@ export default function ProductsPage() {
                       <button onClick={() => handleToggle(product)}>
                         {product.isActive ? "Desactivar" : "Activar"}
                       </button>
+                      <button onClick={() => handleToggleStock(product)}>
+                        {product.isOutOfStock ? "Marcar disponible" : "Marcar agotado"}
+                      </button>
                     </>
                   ) : (
                     <>
                       <button onClick={() => openEdit(product)}>Editar</button>
                       <button onClick={() => handleToggle(product)}>
                         {product.isActive ? "Desactivar" : "Activar"}
+                      </button>
+                      <button onClick={() => handleToggleStock(product)}>
+                        {product.isOutOfStock ? "Marcar disponible" : "Marcar agotado"}
                       </button>
                       <button className="admin-btn-danger" onClick={() => handleDelete(product)}>
                         Eliminar

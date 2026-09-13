@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const emptyForm = { name: "", description: "", price: "", originalPrice: "", categoryId: "", code: "" };
+const emptyForm = { name: "", description: "", price: "", originalPrice: "", categoryId: "", code: "", isOutOfStock: false };
 
 export default function ProductForm({ product, categories, onCancel, onSubmit, submitting }) {
   const [form, setForm] = useState(emptyForm);
@@ -17,6 +17,7 @@ export default function ProductForm({ product, categories, onCancel, onSubmit, s
         originalPrice: product.originalPrice ?? "",
         categoryId: product.categoryId,
         code: product.code || "",
+        isOutOfStock: product.isOutOfStock || false,
       });
       setPreview(product.imageUrl || null);
     } else {
@@ -53,6 +54,7 @@ export default function ProductForm({ product, categories, onCancel, onSubmit, s
         originalPrice: form.originalPrice,
         categoryId: form.categoryId,
         code: isConectores ? form.code.trim() : "",
+        isOutOfStock: form.isOutOfStock,
         imageFile,
       });
     } catch (err) {
@@ -137,6 +139,15 @@ export default function ProductForm({ product, categories, onCancel, onSubmit, s
             />
           </label>
         )}
+
+        <label className="admin-form-field" style={{ flexDirection: "row", alignItems: "center", gap: "0.5rem" }}>
+          <input
+            type="checkbox"
+            checked={form.isOutOfStock}
+            onChange={(e) => setForm({ ...form, isOutOfStock: e.target.checked })}
+          />
+          Agotado (se muestra en la tienda pero no se puede agregar al carrito)
+        </label>
 
         <label className="admin-form-field">
           Imagen (se convertirá automáticamente a WebP 800x800)

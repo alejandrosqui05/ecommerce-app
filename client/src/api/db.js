@@ -46,7 +46,7 @@ export async function listAdminProducts() {
   return data.map(mapProduct);
 }
 
-export async function createProduct({ name, description, price, originalPrice, categoryId, code, sortOrder, imageFile }) {
+export async function createProduct({ name, description, price, originalPrice, categoryId, code, sortOrder, isOutOfStock, imageFile }) {
   let imageUrl = null;
   let imagePath = null;
   if (imageFile) {
@@ -65,6 +65,7 @@ export async function createProduct({ name, description, price, originalPrice, c
       categoryId,
       code: code ? code.trim() : null,
       sortOrder: sortOrder !== undefined && sortOrder !== "" ? Number(sortOrder) : 0,
+      isOutOfStock: !!isOutOfStock,
       imageUrl,
       imagePath,
       updatedAt: new Date().toISOString(),
@@ -76,7 +77,7 @@ export async function createProduct({ name, description, price, originalPrice, c
   return mapProduct(data);
 }
 
-export async function updateProduct(id, { name, description, price, originalPrice, categoryId, isActive, code, sortOrder, imageFile }, previousImagePath) {
+export async function updateProduct(id, { name, description, price, originalPrice, categoryId, isActive, code, sortOrder, isOutOfStock, imageFile }, previousImagePath) {
   const patch = { updatedAt: new Date().toISOString() };
   if (name !== undefined) patch.name = name;
   if (description !== undefined) patch.description = description || null;
@@ -86,6 +87,7 @@ export async function updateProduct(id, { name, description, price, originalPric
   if (isActive !== undefined) patch.isActive = isActive;
   if (code !== undefined) patch.code = code ? code.trim() : null;
   if (sortOrder !== undefined && sortOrder !== "") patch.sortOrder = Number(sortOrder);
+  if (isOutOfStock !== undefined) patch.isOutOfStock = !!isOutOfStock;
 
   if (imageFile) {
     const uploaded = await uploadProductImage(imageFile);
@@ -112,14 +114,16 @@ export async function deleteProduct(id, imagePath) {
 }
 
 // Usada por la cuenta restringida de "editor de precios": solo expone
-// price/isActive/originalPrice (el descuento se considera parte del precio).
-export async function updateProductPrice(id, { price, isActive, originalPrice }) {
+// price/isActive/originalPrice/isOutOfStock (todo lo relacionado a
+// disponibilidad y precio, no a los datos del producto en sí).
+export async function updateProductPrice(id, { price, isActive, originalPrice, isOutOfStock }) {
   const { data, error } = await supabase
     .from("Product")
     .update({
       price,
       isActive,
       originalPrice: originalPrice === "" || originalPrice == null ? null : originalPrice,
+      isOutOfStock: !!isOutOfStock,
       updatedAt: new Date().toISOString(),
     })
     .eq("id", id)
@@ -142,6 +146,17 @@ export async function toggleProductActive(id, currentIsActive) {
   const { data, error } = await supabase
     .from("Product")
     .update({ isActive: !currentIsActive, updatedAt: new Date().toISOString() })
+    .eq("id", id)
+    .select(PRODUCT_SELECT)
+    .single();
+  if (error) throw error;
+  return mapProduct(data);
+}
+
+export async function toggleProductOutOfStock(id, currentIsOutOfStock) {
+  const { data, error } = await supabase
+    .from("Product")
+    .update({ isOutOfStock: !currentIsOutOfStock, updatedAt: new Date().toISOString() })
     .eq("id", id)
     .select(PRODUCT_SELECT)
     .single();
